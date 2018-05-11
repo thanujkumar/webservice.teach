@@ -9,4 +9,3 @@ bin
 *.iws
 .metadata
 TODO.md
-generated/**/
