@@ -1,0 +1,1 @@
+JDK ships with wsimport to generate client code

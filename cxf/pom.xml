@@ -11,12 +11,15 @@
 		<version>1.0</version>
 	</parent>
 
-	<groupId>webservice.teach</groupId>
 	<artifactId>cxf</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>cxf</name>
 
 
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+		</dependency>
 	</dependencies>
 </project>

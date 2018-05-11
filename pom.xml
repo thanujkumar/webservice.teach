@@ -21,7 +21,7 @@
 
 		<spring.version>5.0.5.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
-		
+
 		<cxf.version>3.2.4</cxf.version>
 		<cxf.xjc.version>x.x.x</cxf.xjc.version>
 	</properties>
@@ -79,6 +79,13 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
 				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- CXF -->
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-core</artifactId>
+				<version>${cxf.version}</version>
 			</dependency>
 
 		</dependencies>
