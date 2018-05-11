@@ -1,3 +1,4 @@
-JDK ships with wsimport to generate client code
+# JDK ships with wsimport to generate client code
+# Execute this from folder 'generated'
 
->wsimpor -p jaxws.client -keep http://localhost:8888/rs?wsdl
+>wsimport -p jaxws.client -keep http://localhost:8888/rs?wsdl
