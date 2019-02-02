@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:tk.org:domain:countryProcessingAction:v1"
+	xmlns:tns="urn:tk.org:domain:countryProcessingAction:v1" elementFormDefault="qualified">
+
+	<!-- Use the standard ISO 8601 date format for the dates, because that will save a lot of parsing hassle -->
+
+	<simpleType name="companyId">
+		<restriction base="unsignedInt">
+		</restriction>
+	</simpleType>
+
+	<complexType name="companyType">
+		<sequence>
+			<element name="id" type="tns:companyId" minOccurs="0" />
+			<element name="name" type="string" />
+			<element name="createdBy" type="string" />
+			<element name="createdTimestamp" type="dateTime" />
+			<element name="modifiedBy" type="string" minOccurs="0" />
+			<element name="modifiedTimestamp" type="dateTime" minOccurs="0" />
+		</sequence>
+	</complexType>
+	
+
+</schema>

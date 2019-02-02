@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
-<project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -11,12 +9,51 @@
 		<version>1.0</version>
 	</parent>
 
-	<groupId>webservice.teach</groupId>
 	<artifactId>springws</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
 
 	<name>springws</name>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.ws</groupId>
+			<artifactId>spring-ws-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+		</dependency>
+
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- Jetty as web server -->
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${maven.jetty.plugin}</version>
+				<configuration>
+					<!-- scanIntervalSeconds>10</scanIntervalSeconds -->
+					<useTestScope>true</useTestScope>
+					<useProvidedScope>true</useProvidedScope>
+					<webAppConfig>
+						<extraClasspath>${basedir}/target/classes</extraClasspath>
+					</webAppConfig>
+					<httpConnector>
+						<port>9999</port>
+					</httpConnector>
+					<webApp>
+						<contextPath>/springws</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

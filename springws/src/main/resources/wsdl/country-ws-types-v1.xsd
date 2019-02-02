@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:tk.org:ws:countryProcessingAction:v1"
+	xmlns:tns="urn:tk.org:ws:countryProcessingAction:v1"
+	xmlns:countryProcessingAction="urn:tk.org:domain:countryProcessingAction:v1" elementFormDefault="qualified">
+
+	<import namespace="urn:tk.org:domain:countryProcessingAction:v1" schemaLocation="../xsd/country-v1.xsd" />
+
+	<element name="createCompanyRequest" type="countryProcessingAction:companyType" />
+	<element name="createCompanyResponse" type="countryProcessingAction:companyType" />
+</schema>
