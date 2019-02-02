@@ -1,3 +1,7 @@
+[WSDL to HTML](http://tomi.vanek.sk/)
+
+[Viewer Source](https://github.com/tomi-vanek/wsdl-viewer)
+
 #####Spring Web Services supports the following standards:
 
 * SOAP 1.1 and 1.2
