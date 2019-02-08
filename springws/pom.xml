@@ -53,13 +53,13 @@
 				</executions>
 				<configuration>
 					<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
-					<schemaIncludes>
+					<!--  schemaIncludes>
 						<schemaInclude>*.xsd</schemaInclude>
 					</schemaIncludes>
 					<bindingIncludes>
 					    <bindingInclude>bindings.xjb</bindingInclude>
 					</bindingIncludes>
-					<extension>true</extension>
+					<extension>true</extension -->
 				</configuration>
 			</plugin>
 			<plugin>
