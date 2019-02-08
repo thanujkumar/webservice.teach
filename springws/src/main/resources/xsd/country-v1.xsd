@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:tk.org:domain:countryProcessingAction:v1"
-	xmlns:tns="urn:tk.org:domain:countryProcessingAction:v1" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="urn:tk.org:domain:countryProcessingAction:v1"
+	xmlns:tns="urn:tk.org:domain:countryProcessingAction:v1"
+	elementFormDefault="qualified">
 
-	<!-- Use the standard ISO 8601 date format for the dates, because that will save a lot of parsing hassle -->
+	<!-- Use the standard ISO 8601 date format for the dates, because that will 
+		save a lot of parsing hassle -->
 
 	<simpleType name="countryId">
 		<restriction base="unsignedInt">
 		</restriction>
 	</simpleType>
+
+	<!-- When generating classes from an XML Schema a JAXB implementation will 
+		generate a class annotated with @XmlRootElement for each global element with 
+		an anonymous complex type. Global elements with a named complex type will 
+		have an @XmlElementDecl annotation on a create method on the generated ObjectFactory 
+		class.
+		 
+		http://blog.bdoughan.com/2012/07/jaxb-and-root-elements.html
+		-->
 
 	<complexType name="countryType">
 		<sequence>
@@ -16,9 +28,24 @@
 			<element name="createdBy" type="string" />
 			<element name="createdTimestamp" type="dateTime" />
 			<element name="modifiedBy" type="string" minOccurs="0" />
-			<element name="modifiedTimestamp" type="dateTime" minOccurs="0" />
+			<element name="modifiedTimestamp" type="dateTime"
+				minOccurs="0" />
 		</sequence>
 	</complexType>
-	
+
+   <!-- Below is anonymous complex type and hence will have @XmlRootElement by default -->
+	<element name="AnonymousCountryType">
+		<complexType>
+			<sequence>
+				<element name="id" type="tns:countryId" minOccurs="0" />
+				<element name="name" type="string" />
+				<element name="createdBy" type="string" />
+				<element name="createdTimestamp" type="dateTime" />
+				<element name="modifiedBy" type="string" minOccurs="0" />
+				<element name="modifiedTimestamp" type="dateTime"
+					minOccurs="0" />
+			</sequence>
+		</complexType>
+	</element>
 
 </schema>

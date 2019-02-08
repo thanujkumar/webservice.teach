@@ -56,6 +56,10 @@
 					<schemaIncludes>
 						<schemaInclude>*.xsd</schemaInclude>
 					</schemaIncludes>
+					<bindingIncludes>
+					    <bindingInclude>bindings.xjb</bindingInclude>
+					</bindingIncludes>
+					<extension>true</extension>
 				</configuration>
 			</plugin>
 			<plugin>
