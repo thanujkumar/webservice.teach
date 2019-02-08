@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:util="http://www.springframework.org/schema/util" xmlns:sws="http://www.springframework.org/schema/web-services"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:sws="http://www.springframework.org/schema/web-services"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-4.3.xsd
+		http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
-		http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services.xsd">
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-	<context:component-scan base-package="org.tk.springws" />
+	<context:component-scan
+		base-package="org.tk.springws" />
 
 	<sws:annotation-driven />
 
-    <!-- URL to access this is http://localhost:9999/springws/ws/CountryService.wsdl  where context-path is given in maven jetty and also in jetty-web.xml and /ws is provided in spring-ws-servlet.xml -->
-	<sws:dynamic-wsdl id="CountryService" portTypeName="CountryServicePort" locationUri="/endpoint" targetNamespace="urn:tk.org:ws:countryProcessingAction:v1"
-		serviceName="CountryService">
+	<!-- URL to access this is http://localhost:9999/springws/ws/CountryService.wsdl 
+		where context-path is given in maven jetty and also in jetty-web.xml and 
+		/ws is provided in spring-ws-servlet.xml -->
+	<sws:dynamic-wsdl id="CountryService" portTypeName="CountryServicePort" locationUri="/ws/endpoint" targetNamespace="urn:tk.org:ws:countryProcessingAction:v1"
+		requestSuffix="Request" responseSuffix="Response" serviceName="CountryService">
 		<sws:xsd location="classpath:wsdl/country-ws-types-v1.xsd" />
 	</sws:dynamic-wsdl>
 
-    <bean id="countryService" class="org.tk.springws.service.CountryService" />
+	<bean id="countryService" class="org.tk.springws.service.CountryService" />
+
+    <oxm:jaxb2-marshaller id="marshaller" context-path="org.tk.ws.countryprocessingaction.v1" />
 
 </beans>
