@@ -5,6 +5,6 @@
 
 	<import namespace="urn:tk.org:domain:countryProcessingAction:v1" schemaLocation="../xsd/country-v1.xsd" />
 
-	<element name="createCompanyRequest" type="countryProcessingAction:companyType" />
-	<element name="createCompanyResponse" type="countryProcessingAction:companyType" />
+	<element name="createCountryRequest" type="countryProcessingAction:countryType" />
+	<element name="createCountyResponse" type="countryProcessingAction:countryType" />
 </schema>

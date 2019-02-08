@@ -12,10 +12,11 @@
 	<sws:annotation-driven />
 
     <!-- URL to access this is http://localhost:9999/springws/ws/CountryService.wsdl  where context-path is given in maven jetty and also in jetty-web.xml and /ws is provided in spring-ws-servlet.xml -->
-	<sws:dynamic-wsdl id="CountryService" portTypeName="CountryServicePort" locationUri="/endpoint"
+	<sws:dynamic-wsdl id="CountryService" portTypeName="CountryServicePort" locationUri="/endpoint" targetNamespace="urn:tk.org:ws:countryProcessingAction:v1"
 		serviceName="CountryService">
 		<sws:xsd location="classpath:wsdl/country-ws-types-v1.xsd" />
 	</sws:dynamic-wsdl>
 
+    <bean id="countryService" class="org.tk.springws.service.CountryService" />
 
 </beans>
