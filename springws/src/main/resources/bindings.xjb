@@ -6,8 +6,10 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
 	jaxb:version="2.1" >
 
+
 	<jaxb:globalBindings>
+		<!-- Force all classes implements Serializable -->
+		<jaxb:serializable uid="1"/>
 		<xjc:simple /> <!-- @XmlrootElement when type is used -->
 	</jaxb:globalBindings> 
-	
 </jaxb:bindings>

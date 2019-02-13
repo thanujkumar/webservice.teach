@@ -12,13 +12,13 @@
 	
 	<complexType name="countryCreateRequestType">
 	   <sequence>
-	      <element  ref="countryProcessingAction:country"/>
+	      <element  ref="tns:createCountryRequest"/>
 	   </sequence>   
 	</complexType>
 
 	<complexType name="countryCreateResponseType">
 	   <sequence>
-	      <element  ref="countryProcessingAction:country"/>
+	      <element  ref="tns:createCountyResponse"/>
 	   </sequence>   
 	</complexType>
 	

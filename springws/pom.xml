@@ -41,6 +41,8 @@
 		<plugins>
 			<plugin>
 				<!-- mvn generate-resources will place files target/generated-sources -->
+				<!-- Not using wsdl2Java -->
+				<!-- https://github.com/highsource/maven-jaxb2-plugin/wiki/Specifying-What-To-Compile#specifying-bindings -->
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb2-plugin</artifactId>
 				<version>0.14.0</version>
@@ -53,10 +55,27 @@
 				</executions>
 				<configuration>
 					<schemaDirectory>${project.basedir}/src/main/resources/wsdl</schemaDirectory>
+					<bindingDirectory>src/main/resources</bindingDirectory>
 					<bindingIncludes>
-					    <bindingInclude>${basedir}/src/main/resources/bindings.xjb</bindingInclude>
+						<bindingInclude>**/*.xjb</bindingInclude>
 					</bindingIncludes>
 					<extension>true</extension>
+					<plugins>
+						<!--  plugin>
+							<groupId>org.jvnet.jaxb2_commons</groupId>
+							<artifactId>jaxb2-basics</artifactId>
+							<version>1.11.1</version>
+						</plugin -->
+						<plugin>
+							<groupId>org.jvnet.jaxb2_commons</groupId>
+							<artifactId>jaxb2-basics-annotate</artifactId>
+							<version>1.1.0</version>
+						</plugin>
+					</plugins>
+					<args>
+						<arg>-Xannotate</arg>
+						<!--  arg>-XtoString</arg -->
+					</args>
 				</configuration>
 			</plugin>
 			<plugin>

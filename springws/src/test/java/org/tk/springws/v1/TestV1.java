@@ -1,4 +1,4 @@
-package org.tk.springws.service;
+package org.tk.springws.v1;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -15,7 +15,7 @@ import javax.xml.datatype.DatatypeFactory;
 import org.tk.domain.countryprocessingaction.v1.CountryType;
 import org.tk.ws.countryprocessingaction.v1.ObjectFactory;
 
-public class Test {
+public class TestV1 {
 
 	public static void main(String[] args) throws JAXBException, DatatypeConfigurationException {
 		JAXBContext context = JAXBContext.newInstance("org.tk.ws.countryprocessingaction.v1");
