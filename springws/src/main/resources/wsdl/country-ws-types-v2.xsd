@@ -7,19 +7,18 @@
 
 	<element name="createCountryRequest" type="tns:countryCreateRequestType"/>
 	
-	<element name="createCountyResponse" type="tns:countryCreateResponseType" />
+	<element name="createCountryResponse" type="tns:countryCreateResponseType" />
 	
 	
 	<complexType name="countryCreateRequestType">
-	   <sequence>
-	      <element  ref="tns:createCountryRequest"/>
-	   </sequence>   
+	      <sequence>
+	        <element ref="countryProcessingAction:Country"/>
+	      </sequence>
 	</complexType>
 
 	<complexType name="countryCreateResponseType">
-	   <sequence>
-	      <element  ref="tns:createCountyResponse"/>
-	   </sequence>   
+	      <sequence>
+	        <element ref="countryProcessingAction:Country"/>
+	      </sequence>
 	</complexType>
-	
 </schema>

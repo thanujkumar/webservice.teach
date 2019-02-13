@@ -6,5 +6,5 @@
 	<import namespace="urn:tk.org:domain:countryProcessingAction:v1" schemaLocation="../xsd/country-v1.xsd" />
 
 	<element name="createCountryRequest" type="countryProcessingAction:countryType" />
-	<element name="createCountyResponse" type="countryProcessingAction:countryType" />
+	<element name="createCountryResponse" type="countryProcessingAction:countryType" />
 </schema>

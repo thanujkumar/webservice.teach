@@ -16,6 +16,8 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 import org.tk.domain.countryprocessingaction.v1.CountryType;
 import org.tk.springws.service.CountryService;
 import org.tk.ws.countryprocessingaction.v1.ObjectFactory;
+import org.tk.ws.countryprocessingaction.v2.CreateCountryRequest;
+import org.tk.ws.countryprocessingaction.v2.CreateCountryResponse;
 
 @Endpoint // (Special sort of @Component)
 public class CountryServiceEndpoint {
@@ -43,14 +45,25 @@ public class CountryServiceEndpoint {
 	
 	@PayloadRoot(localPart = "createCountryRequest", namespace = "urn:tk.org:ws:countryProcessingAction:v1")
     @ResponsePayload
-	public JAXBElement<CountryType> createCountryRequest(@RequestPayload JAXBElement<CountryType> countryInfoEle) throws DatatypeConfigurationException {
+	public JAXBElement<CountryType> createCountryRequest_V1(@RequestPayload JAXBElement<CountryType> countryInfoEle) throws DatatypeConfigurationException {
 		CountryType countryInfo = (CountryType) JAXBIntrospector.getValue(countryInfoEle);
         System.out.println(countryInfo);
         GregorianCalendar gcal = new GregorianCalendar();
         gcal.setTime(new Date());
         countryInfo.setCreatedTimestamp(DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal));
         countryInfo.setId(1L);
- 		return new ObjectFactory().createCreateCountyResponse(countryInfo);
+ 		return new ObjectFactory().createCreateCountryResponse(countryInfo);
 	}
 
+	@PayloadRoot(localPart = "createCountryRequest", namespace = "urn:tk.org:ws:countryProcessingAction:v2")
+    @ResponsePayload
+	public CreateCountryResponse createCountryRequest_V2(@RequestPayload CreateCountryRequest req) throws DatatypeConfigurationException {
+		GregorianCalendar gcal = new GregorianCalendar();
+        gcal.setTime(new Date());
+		req.getCountry().setCreatedTimestamp(DatatypeFactory.newInstance().newXMLGregorianCalendar(gcal));
+		
+		CreateCountryResponse response = new CreateCountryResponse();
+        response.setCountry(req.getCountry());
+		return response;
+	}
 }

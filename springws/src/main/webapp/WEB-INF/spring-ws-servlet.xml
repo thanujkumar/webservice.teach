@@ -20,13 +20,20 @@
 	<!-- URL to access this is http://localhost:9999/springws/ws/CountryService.wsdl 
 		where context-path is given in maven jetty and also in jetty-web.xml and 
 		/ws is provided in spring-ws-servlet.xml -->
-	<sws:dynamic-wsdl id="CountryService" portTypeName="CountryServicePort" locationUri="/ws/endpoint" targetNamespace="urn:tk.org:ws:countryProcessingAction:v1"
-		requestSuffix="Request" responseSuffix="Response" serviceName="CountryService">
+	<sws:dynamic-wsdl id="CountryService_V1" portTypeName="CountryServicePort_V1" locationUri="/ws/CountryService_V1" targetNamespace="urn:tk.org:ws:countryProcessingAction:v1"
+		requestSuffix="Request" responseSuffix="Response" serviceName="CountryService_V1">
 		<sws:xsd location="classpath:wsdl/country-ws-types-v1.xsd" />
 	</sws:dynamic-wsdl>
 
 	<bean id="countryService" class="org.tk.springws.service.CountryService" />
 
     <oxm:jaxb2-marshaller id="marshaller" context-path="org.tk.ws.countryprocessingaction.v1" />
+
+	<sws:dynamic-wsdl id="CountryService_V2" portTypeName="CountryServicePort_V2" locationUri="/ws/CountryService_V2" targetNamespace="urn:tk.org:ws:countryProcessingAction:v2"
+		requestSuffix="Request" responseSuffix="Response" serviceName="CountryService_V2">
+		<sws:xsd location="classpath:wsdl/country-ws-types-v2.xsd" />
+	</sws:dynamic-wsdl>
+	
+	 <oxm:jaxb2-marshaller id="marshaller" context-path="org.tk.ws.countryprocessingaction.v2" />
 
 </beans>
