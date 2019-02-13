@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="1b9cb243-2e5a-4d72-9344-99a336534850" activeEnvironment="Default" name="SpringWS" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a371b248-b8ac-4d82-909a-88709f37955a" wsaVersion="NONE" name="CountryServicePort_V1Soap11" type="wsdl" bindingName="{urn:tk.org:ws:countryProcessingAction:v1}CountryServicePort_V1Soap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:9999/springws/ws/CountryService_V1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9999/springws/ws/CountryService_V1.wsdl"><con:part><con:url>http://localhost:9999/springws/ws/CountryService_V1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:tk.org:ws:countryProcessingAction:v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="urn:tk.org:ws:countryProcessingAction:v1" xmlns:sch1="urn:tk.org:domain:countryProcessingAction:v1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:tk.org:ws:countryProcessingAction:v1">
+  <wsdl:types>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:tk.org:ws:countryProcessingAction:v1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:countryProcessingAction="urn:tk.org:domain:countryProcessingAction:v1">
+      <import namespace="urn:tk.org:domain:countryProcessingAction:v1"/>
+      <element name="createCountryRequest" type="countryProcessingAction:countryType"/>
+      <element name="createCountryResponse" type="countryProcessingAction:countryType"/>
+    </schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:tk.org:domain:countryProcessingAction:v1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:tk.org:domain:countryProcessingAction:v1">
+      <simpleType name="countryId">
+        <restriction base="unsignedInt"/>
+      </simpleType>
+      <complexType name="countryType">
+        <sequence>
+          <element minOccurs="0" name="id" type="tns:countryId"/>
+          <element name="name" type="string"/>
+          <element name="createdBy" type="string"/>
+          <element name="createdTimestamp" type="dateTime"/>
+          <element minOccurs="0" name="modifiedBy" type="string"/>
+          <element minOccurs="0" name="modifiedTimestamp" type="dateTime"/>
+        </sequence>
+      </complexType>
+      <element name="AnonymousCountryType">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" name="id" type="tns:countryId"/>
+            <element name="name" type="string"/>
+            <element name="createdBy" type="string"/>
+            <element name="createdTimestamp" type="dateTime"/>
+            <element minOccurs="0" name="modifiedBy" type="string"/>
+            <element minOccurs="0" name="modifiedTimestamp" type="dateTime"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createCountryRequest">
+    <wsdl:part element="tns:createCountryRequest" name="createCountryRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCountryResponse">
+    <wsdl:part element="tns:createCountryResponse" name="createCountryResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CountryServicePort_V1">
+    <wsdl:operation name="createCountry">
+      <wsdl:input message="tns:createCountryRequest" name="createCountryRequest"></wsdl:input>
+      <wsdl:output message="tns:createCountryResponse" name="createCountryResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CountryServicePort_V1Soap11" type="tns:CountryServicePort_V1">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createCountry">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createCountryRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCountryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CountryService_V1">
+    <wsdl:port binding="tns:CountryServicePort_V1Soap11" name="CountryServicePort_V1Soap11">
+      <soap:address location="http://localhost:9999/springws/ws/CountryService_V1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9999/springws/ws/CountryService_V1</con:endpoint></con:endpoints><con:operation id="9f3aa31a-4ead-42ef-955f-3de99c399d1f" isOneWay="false" action="" name="createCountry" bindingOperationName="createCountry" type="Request-Response" outputName="createCountryResponse" inputName="createCountryRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="06b088a2-2bb5-47ad-b7b5-eb18416224bf" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9999/springws/ws/CountryService_V1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:tk.org:ws:countryProcessingAction:v1" xmlns:urn1="urn:tk.org:domain:countryProcessingAction:v1">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:createCountryRequest>\r
+         <!--Optional:-->\r
+         <!-- urn1:id>?</urn1:id -->\r
+         <urn1:name>INDIA</urn1:name>\r
+         <urn1:createdBy>TK</urn1:createdBy>\r
+         <urn1:createdTimestamp>?</urn1:createdTimestamp>\r
+         <!--Optional:-->\r
+         <urn1:modifiedBy>?</urn1:modifiedBy>\r
+         <!--Optional:-->\r
+         <urn1:modifiedTimestamp>?</urn1:modifiedTimestamp>\r
+      </urn:createCountryRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:tk.org:ws:countryProcessingAction:v1/CountryServicePort_V1/createCountryRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="88916faa-7f73-4bbd-bf0a-3d6068073b88" wsaVersion="NONE" name="CountryServicePort_V2Soap11" type="wsdl" bindingName="{urn:tk.org:ws:countryProcessingAction:v2}CountryServicePort_V2Soap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:9999/springws/ws/CountryService_V2.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9999/springws/ws/CountryService_V2.wsdl"><con:part><con:url>http://localhost:9999/springws/ws/CountryService_V2.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="urn:tk.org:ws:countryProcessingAction:v2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch0="urn:tk.org:ws:countryProcessingAction:v2" xmlns:sch1="urn:tk.org:domain:countryProcessingAction:v2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:tk.org:ws:countryProcessingAction:v2">
+  <wsdl:types>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:tk.org:ws:countryProcessingAction:v2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:countryProcessingAction="urn:tk.org:domain:countryProcessingAction:v2">
+      <import namespace="urn:tk.org:domain:countryProcessingAction:v2"/>
+      <element name="createCountryRequest" type="tns:countryCreateRequestType"/>
+      <element name="createCountryResponse" type="tns:countryCreateResponseType"/>
+      <complexType name="countryCreateRequestType">
+        <sequence>
+          <element ref="countryProcessingAction:Country"/>
+        </sequence>
+      </complexType>
+      <complexType name="countryCreateResponseType">
+        <sequence>
+          <element ref="countryProcessingAction:Country"/>
+        </sequence>
+      </complexType>
+    </schema>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:tk.org:domain:countryProcessingAction:v2" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:tk.org:domain:countryProcessingAction:v2">
+      <simpleType name="countryId">
+        <restriction base="unsignedInt"/>
+      </simpleType>
+      <complexType name="countryType">
+        <sequence>
+          <element minOccurs="0" name="id" type="tns:countryId"/>
+          <element name="name" type="string"/>
+          <element name="createdBy" type="string"/>
+          <element name="createdTimestamp" type="dateTime"/>
+          <element minOccurs="0" name="modifiedBy" type="string"/>
+          <element minOccurs="0" name="modifiedTimestamp" type="dateTime"/>
+        </sequence>
+      </complexType>
+      <element name="Country" type="tns:countryType"/>
+      <element name="AnonCountry"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="createCountryRequest">
+    <wsdl:part element="tns:createCountryRequest" name="createCountryRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createCountryResponse">
+    <wsdl:part element="tns:createCountryResponse" name="createCountryResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CountryServicePort_V2">
+    <wsdl:operation name="createCountry">
+      <wsdl:input message="tns:createCountryRequest" name="createCountryRequest"></wsdl:input>
+      <wsdl:output message="tns:createCountryResponse" name="createCountryResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CountryServicePort_V2Soap11" type="tns:CountryServicePort_V2">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createCountry">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="createCountryRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createCountryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CountryService_V2">
+    <wsdl:port binding="tns:CountryServicePort_V2Soap11" name="CountryServicePort_V2Soap11">
+      <soap:address location="http://localhost:9999/springws/ws/CountryService_V2"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9999/springws/ws/CountryService_V2</con:endpoint></con:endpoints><con:operation id="12e95b44-5880-4860-b6c6-9470711c1b9d" isOneWay="false" action="" name="createCountry" bindingOperationName="createCountry" type="Request-Response" outputName="createCountryResponse" inputName="createCountryRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9d639b4d-3994-468f-9b96-c130b04c1a98" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9999/springws/ws/CountryService_V2</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:tk.org:ws:countryProcessingAction:v2" xmlns:urn1="urn:tk.org:domain:countryProcessingAction:v2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:createCountryRequest>\r
+         <urn1:Country>\r
+            <!--Optional:-->\r
+            <!-- urn1:id>?</urn1:id -->\r
+            <urn1:name>SRILANKA</urn1:name>\r
+            <urn1:createdBy>TK</urn1:createdBy>\r
+            <urn1:createdTimestamp>?</urn1:createdTimestamp>\r
+            <!--Optional:-->\r
+            <urn1:modifiedBy>?</urn1:modifiedBy>\r
+            <!--Optional:-->\r
+            <urn1:modifiedTimestamp>?</urn1:modifiedTimestamp>\r
+         </urn1:Country>\r
+      </urn:createCountryRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:tk.org:ws:countryProcessingAction:v2/CountryServicePort_V2/createCountryRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
