@@ -36,11 +36,7 @@
 
    <!-- Below is anonymous complex type and hence will have @XmlRootElement by default -->
 	<element name="Country">
-	  <complexType>
-	     <sequence>
-	        <element ref="tns:countryType" />
-	     </sequence>
-	  </complexType>
+	  
 	</element>
 
 </schema>
