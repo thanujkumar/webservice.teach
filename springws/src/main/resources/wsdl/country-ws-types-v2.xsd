@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:tk.org:ws:countryProcessingAction:v2"
+	xmlns:tns="urn:tk.org:ws:countryProcessingAction:v2"
+	xmlns:countryProcessingAction="urn:tk.org:domain:countryProcessingAction:v2" elementFormDefault="qualified">
+
+	<import namespace="urn:tk.org:domain:countryProcessingAction:v2" schemaLocation="../xsd/country-v2.xsd" />
+
+	<element name="createCountryRequest" type="tns:countryCreateRequestType"/>
+	
+	<element name="createCountyResponse" type="tns:countryCreateResponseType" />
+	
+	
+	<complexType name="countryCreateRequestType">
+	   <sequence>
+	      <element  ref="countryProcessingAction:country"/>
+	   </sequence>   
+	</complexType>
+
+	<complexType name="countryCreateResponseType">
+	   <sequence>
+	      <element  ref="countryProcessingAction:country"/>
+	   </sequence>   
+	</complexType>
+	
+</schema>
