@@ -14,20 +14,20 @@
 	<artifactId>cxf</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<name>cxf</name>
+	<packaging>war</packaging>
 
 
 	<dependencies>
-	
+		<!-- Apache CXF -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-core</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
@@ -44,6 +44,84 @@
 			<artifactId>cxf-rt-ws-security</artifactId>
 		</dependency>
 
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+
+		<!-- Spring framework -->
+		<!-- dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+
 
 	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-war-plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+				<configuration>
+					<failOnMissingWebXml>true</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<!-- Jetty as web server -->
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${maven.jetty.plugin}</version>
+				<configuration>
+					<!-- scanIntervalSeconds>10</scanIntervalSeconds -->
+					<useTestScope>true</useTestScope>
+					<useProvidedScope>true</useProvidedScope>
+					<webAppConfig>
+						<extraClasspath>${basedir}/target/classes</extraClasspath>
+					</webAppConfig>
+					<httpConnector>
+						<port>9999</port>
+					</httpConnector>
+					<webApp>
+						<contextPath>/cxfws</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

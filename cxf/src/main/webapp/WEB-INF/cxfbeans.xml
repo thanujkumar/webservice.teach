@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	
+    <!-- url <context>/ex1/OrderProcess -->
+    <!-- context is /cxfws set in pom.xml for jetty -->
+    <!-- ex1 is CXFServlet path so that multiple examples can be tried -->
+    <!-- http://localhost:9999/cxfws/ex1/OrderProcess?wsdl -->
+	<jaxws:endpoint id="orderProcess" 
+		implementor="cxf.jaxws.frontend.codefirst.ex1.OrderProcessImpl" address="/OrderProcess" />
+
+   
+</beans>
