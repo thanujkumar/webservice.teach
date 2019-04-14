@@ -2,15 +2,28 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:jaxws="http://cxf.apache.org/jaxws"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
 
-	
-    <!-- url <context>/ex1/OrderProcess -->
-    <!-- context is /cxfws set in pom.xml for jetty -->
-    <!-- ex1 is CXFServlet path so that multiple examples can be tried -->
-    <!-- http://localhost:9999/cxfws/ex1/OrderProcess?wsdl -->
-	<jaxws:endpoint id="orderProcess" 
-		implementor="cxf.jaxws.frontend.codefirst.ex1.OrderProcessImpl" address="/OrderProcess" />
 
-   
+	<!-- url <context>/ex1/OrderProcess -->
+	<!-- context is /cxfws set in pom.xml for jetty -->
+	<!-- ex1 is CXFServlet path so that multiple examples can be tried -->
+	<!-- http://localhost:9999/cxfws/ex1/OrderProcess?wsdl -->
+	<jaxws:endpoint id="orderProcess"
+		implementor="cxf.jaxws.frontend.codefirst.ex1.OrderProcessImpl"
+		address="/OrderProcess" />
+
+	<!-- Another way to define -->
+	<!-- https://github.com/apache/cxf/tree/master/distribution/src/main/release/samples -->
+	<!-- http://localhost:9999/cxfws/ex1/OrderProcess2?wsdl -->
+	<jaxws:server id="orderProcess2"
+		serviceClass="cxf.jaxws.frontend.codefirst.ex1.OrderProcess"
+		address="/OrderProcess2">
+		<jaxws:serviceBean>
+			<bean class="cxf.jaxws.frontend.codefirst.ex1.OrderProcessImpl" />
+		</jaxws:serviceBean>
+	</jaxws:server>
+
+
 </beans>
