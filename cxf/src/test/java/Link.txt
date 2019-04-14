@@ -1,0 +1,6 @@
+https://glenmazza.net/blog/entry/soap-integration-tests
+https://alvinalexander.com/java/jwarehouse/apache-cxf/rt/frontend/jaxws/src/test/java/org/apache/cxf/jaxws/JaxWsClientTest.java.shtml
+https://samerabdelkafi.wordpress.com/2013/03/20/web-services-with-apache-cxf/
+https://www.baeldung.com/introduction-to-apache-cxf
+http://cxf.apache.org/docs/sample-projects.html
+https://codenotfound.com/jaxws-cxf-contract-first-hello-world-webservice-tutorial.html
