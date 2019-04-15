@@ -67,6 +67,10 @@
 		<cxf:features>
 			<ref bean="loggingFeature" />
 		</cxf:features>
+		<cxf:properties>
+			<entry key="schema-validation-enabled" value="true" />
+			<entry key="faultStackTraceEnabled" value="true" /> <!-- check the fault response for details -->
+		</cxf:properties>
 	</cxf:bus>
      
 	<!-- url <context>/ex1/OrderProcess -->
