@@ -10,6 +10,6 @@ import javax.jws.WebService;
 @WebService
 public interface OrderProcess {
 
-	@WebMethod
+	@WebMethod //optional, can be used for customization
 	String processOrder(Order order) throws InvalidOrderException;
 }

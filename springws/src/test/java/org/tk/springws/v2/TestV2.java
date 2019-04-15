@@ -4,18 +4,13 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.JAXBIntrospector;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 
-import org.tk.domain.countryprocessingaction.v1.CountryType;
 import org.tk.domain.countryprocessingaction.v2.Country;
-import org.tk.ws.countryprocessingaction.v1.ObjectFactory;
-import org.tk.ws.countryprocessingaction.v2.CreateCountryRequest;
 
 public class TestV2 {
 

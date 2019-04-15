@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -26,6 +25,8 @@
 		<!-- http://ws.apache.org/xmlschema/ -->
 		<xmlschema.version>2.2.4</xmlschema.version>
 		<lombok.version>1.18.6</lombok.version>
+		<sl4j.version>1.7.26</sl4j.version>
+		<logback.version>1.2.3</logback.version>
 
 		<cxf.version>3.3.1</cxf.version>
 		<cxf.xjc.version>x.x.x</cxf.xjc.version>
@@ -138,6 +139,13 @@
 				<version>${cxf.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-features-logging</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+
+
 			<!-- Springframework webservices library -->
 			<dependency>
 				<groupId>org.springframework.ws</groupId>
@@ -185,6 +193,26 @@
 				<version>${lombok.version}</version>
 			</dependency>
 
+			<!-- SL4J API -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${sl4j.version}</version>
+			</dependency>
+
+			<!-- Logback API -->
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -204,10 +232,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.14.1</version>
 			</plugin>
-			<!-- plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-enforcer-plugin</artifactId> 
-				<version>1.2</version> <executions> <execution> <id>enforce</id> <configuration> 
-				<rules> <DependencyConvergence /> </rules> </configuration> <goals> <goal>enforce</goal> 
-				</goals> </execution> </executions> </plugin -->
+			<!-- plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-enforcer-plugin</artifactId> <version>1.2</version> <executions> <execution> <id>enforce</id> <configuration> 
+				<rules> <DependencyConvergence /> </rules> </configuration> <goals> <goal>enforce</goal> </goals> </execution> </executions> </plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>

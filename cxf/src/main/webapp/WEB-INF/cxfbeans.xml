@@ -1,11 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cxf="http://cxf.apache.org/core"
 	xmlns:jaxws="http://cxf.apache.org/jaxws"
 	xmlns:soap="http://cxf.apache.org/bindings/soap"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+	                    http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+	                    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd 
+	                    http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
 
 
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+
+    <!-- Old deprecated class
+	<bean id="loggingFeature" class="org.apache.cxf.feature.LoggingFeature">
+		<property name="prettyLogging" value="true" />
+	</bean>
+
+	<cxf:bus>
+		<cxf:features>
+			<ref bean="loggingFeature" />
+		</cxf:features>
+	</cxf:bus>
+    -->
+
+	<!-- Below classes are from core which are deprecated, need to use from cxf-rt-feature-logging -->
+    <!-- 
+	<bean id="abstractLoggingInterceptor" abstract="true">
+		<property name="prettyLogging" value="true" />
+	</bean>
+
+	<bean id="loggingInInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor" parent="abstractLoggingInterceptor" />
+	<bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor" parent="abstractLoggingInterceptor" />
+	 -->
+	
+	<!-- configuring cxf bus for feature, for now logging xml payload -->
+	
+	<!-- 
+	<bean id="loggingInInterceptor" class="org.apache.cxf.ext.logging.LoggingInInterceptor" parent="abstractLoggingInterceptor" />
+	<bean id="loggingOutInterceptor" class="org.apache.cxf.ext.logging.LoggingOutInterceptor" parent="abstractLoggingInterceptor" />
+	
+
+    <cxf:bus>
+		<cxf:inInterceptors>
+		   <ref bean="loggingInInterceptor"/>
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+		   <ref bean="loggingOutInterceptor" />
+		</cxf:outInterceptors>
+		<cxf:outFaultInterceptors>
+		   <ref bean="loggingOutInterceptor" />
+		</cxf:outFaultInterceptors>
+		<cxf:properties>
+		   <entry key="schema-validation-enabled" value="true"/>
+		    <entry key="faultStackTraceEnabled" value="true"/>
+		</cxf:properties>
+	</cxf:bus>
+    -->
+    
+    <!-- Using cxf-rt-feature-logging -->
+    <bean id="loggingFeature" class="org.apache.cxf.ext.logging.LoggingFeature">
+		<property name="prettyLogging" value="true" />
+	</bean>
+
+	<cxf:bus>
+		<cxf:features>
+			<ref bean="loggingFeature" />
+		</cxf:features>
+	</cxf:bus>
+     
 	<!-- url <context>/ex1/OrderProcess -->
 	<!-- context is /cxfws set in pom.xml for jetty -->
 	<!-- ex1 is CXFServlet path so that multiple examples can be tried -->
