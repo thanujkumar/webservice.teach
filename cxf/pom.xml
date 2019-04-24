@@ -47,6 +47,12 @@
 			<artifactId>cxf-rt-features-logging</artifactId>
 		</dependency>
 		
+		<!-- Aegis databinding - CXF supports JAXB and Aegis and default is JAXB -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-databinding-aegis</artifactId>
+		</dependency>
+		
 		<!-- Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>

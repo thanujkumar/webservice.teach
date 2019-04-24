@@ -1,4 +1,4 @@
-package cxf.jaxws.frontend.codefirst.ex1;
+package cxf.frontend.jaxws.codefirst.ex1;
 
 import javax.xml.ws.WebFault;
 

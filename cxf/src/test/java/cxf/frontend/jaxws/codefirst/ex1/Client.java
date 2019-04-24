@@ -1,11 +1,11 @@
-package cxf.jaxws.frontend.codefirst.ex1;
+package cxf.frontend.jaxws.codefirst.ex1;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Client {
 	
 	public static void main(String[] args) throws Exception {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"cxf/jaxws/frontend/codefirst/ex1/client-ex1.xml"});
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"cxf/frontend/jaxws/codefirst/ex1/client-ex1.xml"});
 	    OrderProcess client = (OrderProcess) context.getBean("orderClient");
 		
 

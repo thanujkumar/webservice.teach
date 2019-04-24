@@ -10,6 +10,7 @@
 	                    http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
 
 
+    <!-- This may not be required as CXFServlet specified in web.xml will internally load the cxf.xml -->
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 
     <!-- Old deprecated class
@@ -78,17 +79,17 @@
 	<!-- ex1 is CXFServlet path so that multiple examples can be tried -->
 	<!-- http://localhost:9999/cxfws/ex1/OrderProcess?wsdl -->
 	<jaxws:endpoint id="orderProcess"
-		implementor="cxf.jaxws.frontend.codefirst.ex1.OrderProcessImpl"
+		implementor="cxf.frontend.jaxws.codefirst.ex1.OrderProcessImpl"
 		address="/OrderProcess" />
 
 	<!-- Another way to define -->
 	<!-- https://github.com/apache/cxf/tree/master/distribution/src/main/release/samples -->
 	<!-- http://localhost:9999/cxfws/ex1/OrderProcess2?wsdl -->
 	<jaxws:server id="orderProcess2"
-		serviceClass="cxf.jaxws.frontend.codefirst.ex1.OrderProcess"
+		serviceClass="cxf.frontend.jaxws.codefirst.ex1.OrderProcess"
 		address="/OrderProcess2">
 		<jaxws:serviceBean>
-			<bean class="cxf.jaxws.frontend.codefirst.ex1.OrderProcessImpl" />
+			<bean class="cxf.frontend.jaxws.codefirst.ex1.OrderProcessImpl" />
 		</jaxws:serviceBean>
 	</jaxws:server>
 
