@@ -86,6 +86,45 @@
 			<artifactId>logback-core</artifactId>
 		</dependency>
 
+
+      <!-- xjc wsdl2java -->
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-fluent-api</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics-runtime</artifactId>
+			<version>1.11.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics</artifactId>
+			<version>1.11.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics-annotate</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		 <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>	
+		<dependency>
+		    <groupId>org.jvnet.jaxb2_commons</groupId>
+		    <artifactId>jaxb2-commons-lang</artifactId>
+		    <version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf.xjc-utils</groupId>
+			<artifactId>cxf-xjc-runtime</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- xjc ends -->  	    
 	</dependencies>
 
 	<build>
@@ -98,6 +137,57 @@
 				<configuration>
 					<failOnMissingWebXml>true</failOnMissingWebXml>
 				</configuration>
+			</plugin>
+
+			<plugin>
+			    <groupId>org.apache.cxf</groupId>
+			    <artifactId>cxf-codegen-plugin</artifactId>
+			    <version>${cxf.version}</version>
+			    <executions>
+			        <execution>
+			            <id>generate-sources</id>
+			            <phase>generate-sources</phase>
+			            <configuration>
+			                <!-- sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot -->
+			                <wsdlOptions>
+			                    <wsdlOption>
+			                        <wsdl>${basedir}/src/main/java/cxf/frontend/jaxws/contractfirst/ex1/OrderProcess.wsdl</wsdl>
+			                        <extraargs>
+			                          <extraarg>-verbose</extraarg>
+			                           <extraarg>-xjc-Xfluent-api</extraarg>
+			                            <extraarg>-xjc-Xts</extraarg>
+			                            <extraarg>-xjc-mark-generated</extraarg>
+			                            <!-- extraarg>-xjc-Xvalue-constructor</extraarg -->
+			                            <extraarg>-xjc-Xannotate</extraarg>
+			                            <extraarg>-xjc-Xequals</extraarg>
+			                            <extraarg>-xjc-XhashCode</extraarg>
+			                            <extraarg>-xjc-Xcopyable</extraarg>
+			                            <extraarg>-xjc-Xmergeable</extraarg>
+			                            <!-- extraarg>-xjc-XJsr303Annotations</extraarg -->
+			                            <extraarg>-exceptionSuper</extraarg>
+			                            <extraarg>java.lang.RuntimeException</extraarg>
+			                        </extraargs>
+			                    </wsdlOption>
+			                </wsdlOptions>
+			                <additionalJvmArgs>-Djavax.xml.accessExternalDTD=all</additionalJvmArgs>
+			            </configuration>
+			            <goals>
+			                <goal>wsdl2java</goal>
+			            </goals>
+			        </execution>
+				</executions>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.cxf.xjcplugins</groupId>
+							<artifactId>cxf-xjc-boolean</artifactId>
+							<version>3.3.0</version>
+						</dependency>
+						<dependency>
+							<groupId>org.apache.cxf.xjcplugins</groupId>
+							<artifactId>cxf-xjc-ts</artifactId>
+							<version>3.3.0</version>
+						</dependency>
+					</dependencies>
 			</plugin>
 
 			<plugin>
