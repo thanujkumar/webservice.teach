@@ -93,5 +93,17 @@
 		</jaxws:serviceBean>
 	</jaxws:server>
 
+    <!-- http://localhost:9999/cxfws/ex1/OrderProcess3?wsdl -->
+	<!-- as in wsdl, though any name can be given for serviceName, endpointName, if wsdlLocation not given can change namespace -->
+	<jaxws:endpoint xmlns:orderProcess="http://order.demo" 
+	                serviceName="orderProcess:OrderProcessService"
+		            endpointName="orderProcess:OrderProcessPort" 
+		            implementor="cxf.frontend.jaxws.contractfirst.ex1.OrderProcessImplWs" 
+		            address="/OrderProcess3"
+		            wsdlLocation="wsdl/OrderProcess.wsdl">
+		<jaxws:properties>
+			<entry key="schema-validation-enabled" value="true" />
+		</jaxws:properties>
+	</jaxws:endpoint>
 
 </beans>

@@ -1,0 +1,4 @@
+As per pom settings code is generate in target (under generated-sources)
+
+Service interface is OrderProcess.java
+

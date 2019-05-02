@@ -151,7 +151,7 @@
 			                <!-- sourceRoot>${project.build.directory}/generated-sources/cxf</sourceRoot -->
 			                <wsdlOptions>
 			                    <wsdlOption>
-			                        <wsdl>${basedir}/src/main/java/cxf/frontend/jaxws/contractfirst/ex1/OrderProcess.wsdl</wsdl>
+			                        <wsdl>${basedir}/src/main/resources/wsdl/OrderProcess.wsdl</wsdl>
 			                        <extraargs>
 			                          <extraarg>-verbose</extraarg>
 			                           <extraarg>-xjc-Xfluent-api</extraarg>
