@@ -7,7 +7,7 @@
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	
 	<wsdl:types>
-		<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://order.demo" xmlns:tns="http://order.demo"
+		<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://order.demo" xmlns:tns="http://order.demo"
 			xmlns:xs="http://www.w3.org/2001/XMLSchema">
 			<!-- XSD Schema for Input and Output operations -->
 			<xs:element name="processOrder" type="tns:processOrder" />
