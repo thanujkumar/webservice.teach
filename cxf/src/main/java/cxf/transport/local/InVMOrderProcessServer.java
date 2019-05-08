@@ -56,7 +56,7 @@ public class InVMOrderProcessServer {
 //		sf.create();
 		
 		//Now call the as client in the same VM
-		InVMOrderProcessClient.main(new String[] {});
+		InVMOrderProcessClient.runInAsVMClient();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

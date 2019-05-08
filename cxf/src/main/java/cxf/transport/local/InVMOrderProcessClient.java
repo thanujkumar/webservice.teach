@@ -7,7 +7,7 @@ import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 public class InVMOrderProcessClient {
  
-	public static void main(String[] args) throws Exception {
+	public static void runInAsVMClient() throws Exception {
 	
 		JaxWsProxyFactoryBean proxyFactory = new JaxWsProxyFactoryBean(); //based on ClientProxyFactoryBean
 		proxyFactory.getFeatures().add(new LoggingFeature());
