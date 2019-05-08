@@ -1,21 +1,18 @@
-package cxf.frontend.jaxws.codefirst.ex3.jaxwsfactory.aegis;
+package cxf.frontend.jaxws.codefirst.ex4.context;
 
-import org.apache.cxf.aegis.databinding.AegisDatabinding;
 import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
-import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
 import cxf.transport.local.Order;
+import cxf.transport.local.OrderProcess;
 
-public class Client {
- 
-	//Run cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory.UsingJaxWSServerFactory
+public class OrderProcessClient {
+
 	public static void main(String[] args) throws Exception {
 		
 		JaxWsProxyFactoryBean proxyFactory = new JaxWsProxyFactoryBean(); //based on ClientProxyFactoryBean
 		proxyFactory.getFeatures().add(new LoggingFeature());
-		proxyFactory.setAddress("http://localhost:9999/orderProcess");
-		proxyFactory.setDataBinding(new AegisDatabinding()); //AegisDatabinding
+		proxyFactory.setAddress("http://localhost:9292/orderProcess4");
 		OrderProcess processOrder = proxyFactory.create(OrderProcess.class);
 		
 		Order order = new Order();
@@ -24,5 +21,7 @@ public class Client {
 		order.setPrice(2.3);
 		order.setQuantity(10);
 		System.out.println(processOrder.processOrder(order));
+
+		
 	}
 }

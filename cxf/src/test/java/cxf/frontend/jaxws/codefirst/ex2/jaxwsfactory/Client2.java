@@ -5,8 +5,8 @@ import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
-import cxf.frontend.jaxws.codefirst.ex1.Order;
 import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
+import cxf.transport.local.Order;
 
 public class Client2 {
 	

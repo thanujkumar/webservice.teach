@@ -3,8 +3,8 @@ package cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory;
 import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
-import cxf.frontend.jaxws.codefirst.ex1.Order;
 import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
+import cxf.transport.local.Order;
 
 public class Client {
  

@@ -2,6 +2,8 @@ package cxf.frontend.jaxws.codefirst.ex1;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import cxf.transport.local.Order;
+
 public class Client {
 	
 	public static void main(String[] args) throws Exception {

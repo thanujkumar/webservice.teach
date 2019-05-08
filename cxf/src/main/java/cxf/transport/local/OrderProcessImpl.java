@@ -1,8 +1,6 @@
-package cxf.frontend.jaxws.codefirst.ex1;
+package cxf.transport.local;
 
 import java.util.UUID;
-
-import cxf.transport.local.Order;
 
 public class OrderProcessImpl implements OrderProcess {
 	

@@ -1,9 +1,10 @@
-package cxf.frontend.jaxws.codefirst.ex1;
+package cxf.transport.local;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import cxf.transport.local.Order;
+
 
 /**
  * Create a Service Endpoint Interface (SEI) and define a business method to be
@@ -13,5 +14,5 @@ import cxf.transport.local.Order;
 public interface OrderProcess {
 
 	@WebMethod //optional, can be used for customization
-	String processOrder(Order order) throws InvalidOrderException;
+	String processOrder(@WebParam(name="order") Order order) throws InvalidOrderException;
 }

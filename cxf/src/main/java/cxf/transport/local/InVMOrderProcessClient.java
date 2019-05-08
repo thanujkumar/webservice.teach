@@ -1,21 +1,17 @@
-package cxf.frontend.jaxws.codefirst.ex3.jaxwsfactory.aegis;
+package cxf.transport.local;
 
-import org.apache.cxf.aegis.databinding.AegisDatabinding;
 import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
-import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
-import cxf.transport.local.Order;
+//http://ashakirin.blogspot.com/2012/02/custom-cxf-transport.html
 
-public class Client {
+public class InVMOrderProcessClient {
  
-	//Run cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory.UsingJaxWSServerFactory
 	public static void main(String[] args) throws Exception {
-		
+	
 		JaxWsProxyFactoryBean proxyFactory = new JaxWsProxyFactoryBean(); //based on ClientProxyFactoryBean
 		proxyFactory.getFeatures().add(new LoggingFeature());
-		proxyFactory.setAddress("http://localhost:9999/orderProcess");
-		proxyFactory.setDataBinding(new AegisDatabinding()); //AegisDatabinding
+		proxyFactory.setAddress("local://OrderProcessLocal");
 		OrderProcess processOrder = proxyFactory.create(OrderProcess.class);
 		
 		Order order = new Order();
