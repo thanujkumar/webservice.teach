@@ -3,11 +3,13 @@ package cxf.transport.local;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Map;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
 import org.apache.cxf.bus.managers.DestinationFactoryManagerImpl;
 import org.apache.cxf.ext.logging.LoggingFeature;
+import org.apache.cxf.feature.Feature;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 import org.apache.cxf.transport.ConduitInitiatorManager;
 import org.apache.cxf.transport.DestinationFactoryManager;
@@ -64,6 +66,16 @@ public class InVMOrderProcessServer {
 			br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		
+		
+		Bus serverBus = BusFactory.getDefaultBus();
+		for (Feature f : serverBus.getFeatures()) {
+			 System.out.println(f);
+		}
+		Map<String, Object> props = serverBus.getProperties();
+		for(String s : props.keySet()) {
+			System.out.println(s +" -> "+ props.get(s));
 		}
 
 		System.out.println("Stopping server....");
