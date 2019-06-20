@@ -29,8 +29,8 @@ public class TestV2 {
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		try {
-			// As CountryType has no @XmlRootElement this would fail
-			marshaller.marshal(type, System.out); // will fail
+			//Will pass as country has root element annotation
+			marshaller.marshal(type, System.out);
 
 		} catch (Exception e) {
 			e.printStackTrace();

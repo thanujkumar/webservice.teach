@@ -197,4 +197,74 @@
          </arg0>
       </ex1:processOrder>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ex1.codefirst.frontend.jaxws.cxf/OrderProcess/processOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ex1.codefirst.frontend.jaxws.cxf/OrderProcess/processOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="890cf82d-42c1-4a2d-9623-69a162f53ade" wsaVersion="NONE" name="OrderProcessService4SoapBinding" type="wsdl" bindingName="{http://context.ex4.codefirst.jaxws.frontend.cxf/}OrderProcessService4SoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9292/orderProcess4?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9292/orderProcess4?wsdl"><con:part><con:url>http://localhost:9292/orderProcess4?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="OrderProcessService4" targetNamespace="http://context.ex4.codefirst.jaxws.frontend.cxf/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://context.ex4.codefirst.jaxws.frontend.cxf/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://context.ex4.codefirst.jaxws.frontend.cxf/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="processOrder" type="tns:processOrder"/>
+      <xs:element name="processOrderResponse" type="tns:processOrderResponse"/>
+      <xs:complexType name="processOrder">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="order" type="tns:order"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="order">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customerId" type="xs:string"/>
+          <xs:element minOccurs="0" name="itemId" type="xs:string"/>
+          <xs:element name="price" type="xs:double"/>
+          <xs:element name="quantity" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="processOrderResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+          <xs:element minOccurs="0" name="order" type="tns:order"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="processOrderResponse">
+    <wsdl:part element="tns:processOrderResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="processOrder">
+    <wsdl:part element="tns:processOrder" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OrderProcess">
+    <wsdl:operation name="processOrder">
+      <wsdl:input message="tns:processOrder" name="processOrder"></wsdl:input>
+      <wsdl:output message="tns:processOrderResponse" name="processOrderResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderProcessService4SoapBinding" type="tns:OrderProcess">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="processOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="processOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="processOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderProcessService4">
+    <wsdl:port binding="tns:OrderProcessService4SoapBinding" name="OrderProcessPort4">
+      <soap:address location="http://localhost:9292/orderProcess4"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9292/orderProcess4</con:endpoint></con:endpoints><con:operation id="41ed27f8-bbc8-4a0e-9f50-57fe7cd273d6" isOneWay="false" action="" name="processOrder" bindingOperationName="processOrder" type="Request-Response" outputName="processOrderResponse" inputName="processOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a241ad0d-32a9-4d78-9104-85b673f3f383" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9292/orderProcess4</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:con="http://context.ex4.codefirst.jaxws.frontend.cxf/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <con:processOrder>\r
+         <!--Optional:-->\r
+         <order>\r
+            <!--Optional:-->\r
+            <customerId>23A</customerId>\r
+            <!--Optional:-->\r
+            <itemId>10</itemId>\r
+            <price>4.5</price>\r
+            <quantity>4</quantity>\r
+         </order>\r
+      </con:processOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://context.ex4.codefirst.jaxws.frontend.cxf/OrderProcess/processOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

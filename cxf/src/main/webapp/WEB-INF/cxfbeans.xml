@@ -59,7 +59,8 @@
 	</cxf:bus>
     -->
     
-    <!-- Using cxf-rt-feature-logging -->
+    <!-- Using cxf-rt-feature-logging, logging in above and below is in different format -->
+
     <bean id="loggingFeature" class="org.apache.cxf.ext.logging.LoggingFeature">
 		<property name="prettyLogging" value="true" />
 	</bean>
@@ -73,10 +74,11 @@
 			<entry key="faultStackTraceEnabled" value="true" /> <!-- check the fault response for details -->
 		</cxf:properties>
 	</cxf:bus>
-     
+
 	<!-- url <context>/ex1/OrderProcess -->
 	<!-- context is /cxfws set in pom.xml for jetty -->
 	<!-- ex1 is CXFServlet path so that multiple examples can be tried -->
+	<!--  to list services http://localhost:9999/cxfws/ex1/services/ -->
 	<!-- http://localhost:9999/cxfws/ex1/OrderProcess?wsdl -->
 	<jaxws:endpoint id="orderProcess"
 		implementor="cxf.frontend.jaxws.codefirst.ex1.OrderProcessImpl"
