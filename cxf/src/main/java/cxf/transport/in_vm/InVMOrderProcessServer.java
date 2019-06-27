@@ -1,4 +1,4 @@
-package cxf.transport.local;
+package cxf.transport.in_vm;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,13 +42,13 @@ public class InVMOrderProcessServer {
 
 		     //---------OR---------------//
 		
-//		org.apache.cxf.jaxws.EndpointImpl endpoint = (EndpointImpl) Endpoint.publish("local://OrderProcessLocal",
+//		org.apache.cxf.jaxws.EndpointImpl endpoint = (EndpointImpl) Endpoint.publish("in_vm://OrderProcessLocal",
 //				orderProcessImpl);
 		
 		   //---------OR---------------//
 		
 //		ServerFactoryBean sf = new ServerFactoryBean();
-//		sf.setAddress("local://OrderProcessLocal");
+//		sf.setAddress("in_vm://OrderProcessLocal");
 //		sf.setServiceBean(orderProcessImpl);
 //		sf.setServiceClass(OrderProcess.class); // Optionally specify the service interface
 //		sf.create();

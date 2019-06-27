@@ -2,7 +2,7 @@ package cxf.frontend.jaxws.codefirst.ex1;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cxf.transport.local.Order;
+import cxf.transport.in_vm.Order;
 
 public class Client {
 	
