@@ -1,4 +1,4 @@
-package cxf.transport.local;
+package cxf.transport.in_vm;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,13 +7,9 @@ import java.util.Map;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.BusFactory;
-import org.apache.cxf.bus.managers.DestinationFactoryManagerImpl;
 import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.feature.Feature;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
-import org.apache.cxf.transport.ConduitInitiatorManager;
-import org.apache.cxf.transport.DestinationFactoryManager;
-import org.apache.cxf.transport.local.LocalTransportFactory;
 
 public class InVMOrderProcessServer {
 
@@ -46,13 +42,13 @@ public class InVMOrderProcessServer {
 
 		     //---------OR---------------//
 		
-//		org.apache.cxf.jaxws.EndpointImpl endpoint = (EndpointImpl) Endpoint.publish("local://OrderProcessLocal",
+//		org.apache.cxf.jaxws.EndpointImpl endpoint = (EndpointImpl) Endpoint.publish("in_vm://OrderProcessLocal",
 //				orderProcessImpl);
 		
 		   //---------OR---------------//
 		
 //		ServerFactoryBean sf = new ServerFactoryBean();
-//		sf.setAddress("local://OrderProcessLocal");
+//		sf.setAddress("in_vm://OrderProcessLocal");
 //		sf.setServiceBean(orderProcessImpl);
 //		sf.setServiceClass(OrderProcess.class); // Optionally specify the service interface
 //		sf.create();
@@ -78,6 +74,8 @@ public class InVMOrderProcessServer {
 			System.out.println(s +" -> "+ props.get(s));
 		}
 
+		serverBus.shutdown(true);
+		
 		System.out.println("Stopping server....");
 		System.exit(0);
 	}

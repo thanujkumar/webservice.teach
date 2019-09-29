@@ -34,6 +34,7 @@
 		</encoder>
 	</appender>
 
+	<!--WSPAYLOAD to logg in and out messages -->
 	<logger name="org.apache.cxf.services" additivity="false">
 		<appender-ref ref="WSPAYLOAD" />
 	</logger>

@@ -6,7 +6,7 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
 import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
-import cxf.transport.local.Order;
+import cxf.transport.in_vm.Order;
 
 public class Client2 {
 	

@@ -1,4 +1,4 @@
-package cxf.transport.local;
+package cxf.transport.in_vm;
 
 import javax.xml.ws.WebFault;
 

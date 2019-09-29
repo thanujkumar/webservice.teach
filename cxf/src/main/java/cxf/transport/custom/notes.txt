@@ -1,0 +1,11 @@
+The transport functionality is based on two fundamental definitions: conduit and destination. 
+Conduits are responsible for sending a message to recipients and destinations for receiving a message from the sender. 
+In order to send a response, a destination needs its own back-channel conduit (in case of request-response communication). 
+Conduits and destinations are created by a TransportFactory. CXF selects the correct TransportFactory based on the transport URL. 
+SOAP is also considered a high level transport and has its own conduit and destination in CXF.
+
+To send a message into a physical channel, the conduit should access the message content. 
+As far as CXF is streaming oriented, normal practice in this case is to use a subclass of OutputStream extending CachedOutputStream. 
+The custom stream will be fed the message and provides a possibility to access context in streaming or buffered form depending on 
+the transport requirements. CachedOutputStream is configured to keep message in memory only up to a predefined size. If this size is exceeded, 
+the message is swapped to disk.

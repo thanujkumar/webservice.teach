@@ -9,6 +9,6 @@
 	                    http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd 
 	                    http://cxf.apache.org/bindings/soap http://cxf.apache.org/schemas/configuration/soap.xsd">
 
-  <jaxws:client id="orderClient"  serviceClass="cxf.jaxws.frontend.codefirst.ex1.OrderProcess"  address="http://localhost:9999/cxfws/ex1/OrderProcess"/>
+  <jaxws:client id="orderClient"  serviceClass="cxf.frontend.jaxws.codefirst.ex1.OrderProcess"  address="http://localhost:9999/cxfws/ex1/OrderProcess"/>
   
 </beans>
