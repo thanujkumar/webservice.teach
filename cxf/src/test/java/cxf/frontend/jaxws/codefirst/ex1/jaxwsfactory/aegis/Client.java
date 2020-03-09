@@ -1,4 +1,4 @@
-package cxf.frontend.jaxws.codefirst.ex3.jaxwsfactory.aegis;
+package cxf.frontend.jaxws.codefirst.ex1.jaxwsfactory.aegis;
 
 import org.apache.cxf.aegis.databinding.AegisDatabinding;
 import org.apache.cxf.ext.logging.LoggingFeature;

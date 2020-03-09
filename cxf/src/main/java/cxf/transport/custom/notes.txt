@@ -1,4 +1,6 @@
-The transport functionality is based on two fundamental definitions: conduit and destination. 
+http://ashakirin.blogspot.com/2012/02/custom-cxf-transport.html
+
+The transport functionality is based on two fundamental definitions: conduit and destination.
 Conduits are responsible for sending a message to recipients and destinations for receiving a message from the sender. 
 In order to send a response, a destination needs its own back-channel conduit (in case of request-response communication). 
 Conduits and destinations are created by a TransportFactory. CXF selects the correct TransportFactory based on the transport URL. 

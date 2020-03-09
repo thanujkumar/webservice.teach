@@ -1,4 +1,4 @@
-package cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory;
+package cxf.frontend.jaxws.codefirst.ex1.jaxwsfactory;
 
 import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
