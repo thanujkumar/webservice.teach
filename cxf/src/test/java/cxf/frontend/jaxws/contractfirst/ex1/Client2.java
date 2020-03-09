@@ -12,7 +12,7 @@ import demo.order.OrderProcess;
 
 public class Client2 {
 	
-	private static final QName SERVICE_NAME = new QName("http://order.demo", "OrderProcessService");
+	private static final QName SERVICE_NAME = new QName("http://order.demo", "OrderProcessService");//matches wsdl service name
 	private static final QName PORT_NAME = new QName("http://order.demo", "OrderProcessPort");
 	
 	private static final String WSDL_LOCATION = "http://localhost:9999/cxfws/ex1/OrderProcess3?wsdl";

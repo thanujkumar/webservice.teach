@@ -24,5 +24,10 @@ public class Client {
 		order.setPrice(2.3);
 		order.setQty(10);
 		System.out.println(processOrder.processOrder(order));
+
+		//Print Feature
+		proxyFactory.getFeatures().forEach(x -> System.out.println(x));
+		//Print Handlers
+		proxyFactory.getHandlers().forEach(x -> System.out.println(x));
 	}
 }
