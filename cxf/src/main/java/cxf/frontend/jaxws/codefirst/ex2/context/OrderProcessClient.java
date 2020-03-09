@@ -1,10 +1,7 @@
-package cxf.frontend.jaxws.codefirst.ex4.context;
+package cxf.frontend.jaxws.codefirst.ex2.context;
 
 import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-
-import cxf.transport.in_vm.Order;
-import cxf.transport.in_vm.OrderProcess;
 
 public class OrderProcessClient {
 

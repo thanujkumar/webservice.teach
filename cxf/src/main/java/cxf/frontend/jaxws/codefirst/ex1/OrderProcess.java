@@ -3,7 +3,6 @@ package cxf.frontend.jaxws.codefirst.ex1;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
-import cxf.transport.in_vm.Order;
 
 /**
  * Create a Service Endpoint Interface (SEI) and define a business method to be

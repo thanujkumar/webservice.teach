@@ -4,7 +4,7 @@ import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
-import cxf.transport.in_vm.Order;
+import cxf.frontend.jaxws.codefirst.ex1.Order;
 
 public class Client {
  

@@ -1,4 +1,4 @@
-package cxf.frontend.jaxws.codefirst.ex4.context;
+package cxf.frontend.jaxws.codefirst.ex2.context;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;

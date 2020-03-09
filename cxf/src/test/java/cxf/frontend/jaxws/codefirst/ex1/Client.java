@@ -2,10 +2,11 @@ package cxf.frontend.jaxws.codefirst.ex1;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cxf.transport.in_vm.Order;
+
 
 public class Client {
-	
+
+	//Below uses cxf client configuration from spring configuration
 	public static void main(String[] args) throws Exception {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"cxf/frontend/jaxws/codefirst/ex1/client-ex1.xml"});
 	    OrderProcess client = (OrderProcess) context.getBean("orderClient");

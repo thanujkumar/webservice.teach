@@ -2,7 +2,7 @@ package cxf.frontend.jaxws.codefirst.ex1;
 
 import java.util.UUID;
 
-import cxf.transport.in_vm.Order;
+
 
 public class OrderProcessImpl implements OrderProcess {
 	

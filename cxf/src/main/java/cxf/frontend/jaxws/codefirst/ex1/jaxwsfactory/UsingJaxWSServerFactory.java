@@ -1,7 +1,7 @@
 package cxf.frontend.jaxws.codefirst.ex1.jaxwsfactory;
 
-import org.apache.cxf.aegis.databinding.AegisDatabinding;
-import org.apache.cxf.databinding.DataBinding;
+//import org.apache.cxf.aegis.databinding.AegisDatabinding;
+//import org.apache.cxf.databinding.DataBinding;
 import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 

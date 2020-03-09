@@ -6,6 +6,8 @@ import cxf.frontend.jaxws.codefirst.ex1.MyFaultBean;
 import demo.order.Order;
 import demo.order.OrderProcess;
 
+//In this wsdl is created and code generated - check resources/wsdl/OrderProcess.wsdl
+//run mvn jetty:run from cxf folder
 public class OrderProcessImplWs implements OrderProcess {
 
 	@Override

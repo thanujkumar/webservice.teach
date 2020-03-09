@@ -5,11 +5,11 @@ import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
-import cxf.transport.in_vm.Order;
+import cxf.frontend.jaxws.codefirst.ex1.Order;
 
 public class Client {
  
-	//Run cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory.UsingJaxWSServerFactory
+	//Run cxf.frontend.jaxws.codefirst.ex1.jaxwsfactory.aegis.UsingJaxWSServerFactoryWithAegisBinding
 	public static void main(String[] args) throws Exception {
 		
 		JaxWsProxyFactoryBean proxyFactory = new JaxWsProxyFactoryBean(); //based on ClientProxyFactoryBean

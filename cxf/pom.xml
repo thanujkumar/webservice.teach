@@ -156,6 +156,14 @@
 			<artifactId>jakarta.inject-api</artifactId>
 		</dependency>
 
+		<!-- Required for running dynamic client for contractfirst.ex1.xxDynamicxxx -->
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-xjc</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

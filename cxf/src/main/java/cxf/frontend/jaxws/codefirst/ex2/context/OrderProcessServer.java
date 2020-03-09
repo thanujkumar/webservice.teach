@@ -1,11 +1,10 @@
-package cxf.frontend.jaxws.codefirst.ex4.context;
+package cxf.frontend.jaxws.codefirst.ex2.context;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 import org.apache.cxf.ext.logging.LoggingFeature;
-import org.apache.cxf.frontend.ServerFactoryBean;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 
 public class OrderProcessServer {
