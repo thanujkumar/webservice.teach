@@ -9,7 +9,8 @@ import demo.order.OrderProcess;
 
 public class Client {
  
-	//Run cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory.UsingJaxWSServerFactory
+	//Run cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory.UsingJaxWSServerFactory (http://localhost:9999/orderProcess)
+	//Run jetty for second example
 	public static void main(String[] args) throws Exception {
 		
 		JaxWsProxyFactoryBean proxyFactory = new JaxWsProxyFactoryBean(); //based on ClientProxyFactoryBean
