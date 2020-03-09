@@ -23,6 +23,13 @@
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-core</artifactId>
+			<exclusions>
+				<exclusion>
+					<!-- using javax.activation as there is dependency for com.sun... -->
+					<artifactId>jakarta.activation-api</artifactId>
+					<groupId>jakarta.activation</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -131,6 +138,13 @@
 			<groupId>org.apache.cxf.xjc-utils</groupId>
 			<artifactId>cxf-xjc-runtime</artifactId>
 			<version>3.3.1</version>
+			<exclusions>
+				<exclusion>
+					<!-- using javax.activation as there is dependency for com.sun... -->
+					<artifactId>jakarta.activation-api</artifactId>
+					<groupId>jakarta.activation</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!-- xjc ends -->
 
@@ -138,10 +152,24 @@
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>
 			<artifactId>jakarta.xml.bind-api</artifactId>
+			<exclusions>
+				<exclusion>
+					<!-- using javax.activation as there is dependency for com.sun... -->
+					<artifactId>jakarta.activation-api</artifactId>
+					<groupId>jakarta.activation</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.xml.ws</groupId>
 			<artifactId>jakarta.xml.ws-api</artifactId>
+			<exclusions>
+				<exclusion>
+					<!-- using javax.activation as there is dependency for com.sun... -->
+					<artifactId>jakarta.activation-api</artifactId>
+					<groupId>jakarta.activation</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>jakarta.jws</groupId>
@@ -163,13 +191,13 @@
 			<artifactId>jaxb-xjc</artifactId>
 			<version>2.3.2</version>
 		</dependency>
-		<!-- required for in-vm  as jakarta.activation is missing com/sun/activation/registries/LogSupport class -->
+		<!-- required for in-vm  as jakarta.activation is missing com/sun/activation/registries/LogSupport class, reason in javax.activation.MailcapCommandMap is tied to LogSupport -->
 		<!-- https://issues.apache.org/jira/browse/CXF-7899 -->
-		<!-- dependency>
+		<dependency>
 			<groupId>com.sun.activation</groupId>
 			<artifactId>javax.activation</artifactId>
 			<version>1.2.0</version>
-		</dependency -->
+		</dependency>
 
 
 	</dependencies>

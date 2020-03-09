@@ -309,6 +309,10 @@
 						<artifactId>javax.activation</artifactId>
 						<groupId>com.sun.activation</groupId>
 					</exclusion>
+					<exclusion>
+						<artifactId>geronimo-javamail_1.4_mail</artifactId>
+						<groupId>org.apache.geronimo.javamail</groupId>
+					</exclusion>
 				</exclusions>
 			</dependency>
 
@@ -362,6 +366,12 @@
 				<groupId>org.springframework.ws</groupId>
 				<artifactId>spring-ws-support</artifactId>
 				<version>${springws.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>activation</artifactId>
+						<groupId>javax.activation</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.ws</groupId>
