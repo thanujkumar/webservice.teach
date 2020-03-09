@@ -109,12 +109,64 @@
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-core</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.jboss.spec.javax.rmi</groupId>
+						<artifactId>jboss-rmi-api_1.0_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-jta_1.1_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.xml.ws</groupId>
+						<artifactId>jaxws-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.xml.soap</groupId>
+						<artifactId>javax.xml.soap-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.activation</groupId>
+						<artifactId>javax.activation</artifactId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.annotation-api</artifactId>
+						<groupId>javax.annotation</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 			<dependency>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-frontend-jaxws</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.xml.ws</groupId>
+						<artifactId>jaxws-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-jta_1.1_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.activation</groupId>
+						<artifactId>javax.activation</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.annotation</groupId>
+						<artifactId>javax.annotation-api</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 			<dependency>
@@ -127,30 +179,136 @@
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-transports-http</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.xml.ws</groupId>
+						<artifactId>jaxws-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.activation</groupId>
+						<artifactId>javax.activation</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-jta_1.1_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.annotation</groupId>
+						<artifactId>javax.annotation-api</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 			<dependency>
 			    <groupId>org.apache.cxf</groupId>
 			    <artifactId>cxf-rt-transports-local</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>javax.annotation-api</artifactId>
+						<groupId>javax.annotation</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+						<groupId>org.apache.geronimo.specs</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>jaxws-api</artifactId>
+						<groupId>javax.xml.ws</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.activation</artifactId>
+						<groupId>com.sun.activation</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 			<dependency>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-transports-http-jetty</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>javax.servlet-api</artifactId>
+						<groupId>javax.servlet</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>jaxws-api</artifactId>
+						<groupId>javax.xml.ws</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.annotation-api</artifactId>
+						<groupId>javax.annotation</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+						<groupId>org.apache.geronimo.specs</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.activation</artifactId>
+						<groupId>com.sun.activation</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			
 			<dependency>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-databinding-aegis</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.xml.ws</groupId>
+						<artifactId>jaxws-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.activation</groupId>
+						<artifactId>javax.activation</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.geronimo.specs</groupId>
+						<artifactId>geronimo-jta_1.1_spec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.annotation</groupId>
+						<artifactId>javax.annotation-api</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 			<dependency>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-ws-security</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>jaxws-api</artifactId>
+						<groupId>javax.xml.ws</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>woodstox-core-asl</artifactId>
+						<groupId>org.codehaus.woodstox</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+						<groupId>org.apache.geronimo.specs</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.annotation-api</artifactId>
+						<groupId>javax.annotation</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.activation</artifactId>
+						<groupId>com.sun.activation</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 			<dependency>
@@ -163,6 +321,28 @@
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-rt-features-logging</artifactId>
 				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+						<groupId>org.apache.geronimo.specs</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.xml.soap-api</artifactId>
+						<groupId>javax.xml.soap</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.annotation-api</artifactId>
+						<groupId>javax.annotation</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>jaxws-api</artifactId>
+						<groupId>javax.xml.ws</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>javax.activation</artifactId>
+						<groupId>com.sun.activation</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 
@@ -204,6 +384,16 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
 				<version>${springws.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>aopalliance</artifactId>
+						<groupId>aopalliance</groupId>
+					</exclusion>
+					<exclusion>
+						<artifactId>spring-jcl</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 
 
