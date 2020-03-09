@@ -11,6 +11,8 @@ import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.feature.Feature;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 
+//Both Server and client should run in same VM for communication
+
 public class InVMOrderProcessServer {
 
 	public static void main(String[] args) throws Exception {

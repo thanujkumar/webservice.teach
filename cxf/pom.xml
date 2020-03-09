@@ -156,12 +156,20 @@
 			<artifactId>jakarta.inject-api</artifactId>
 		</dependency>
 
+
 		<!-- Required for running dynamic client for contractfirst.ex1.xxDynamicxxx -->
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-xjc</artifactId>
 			<version>2.3.2</version>
 		</dependency>
+		<!-- required for in-vm  as jakarta.activation is missing com/sun/activation/registries/LogSupport class -->
+		<!-- https://issues.apache.org/jira/browse/CXF-7899 -->
+		<!-- dependency>
+			<groupId>com.sun.activation</groupId>
+			<artifactId>javax.activation</artifactId>
+			<version>1.2.0</version>
+		</dependency -->
 
 
 	</dependencies>
