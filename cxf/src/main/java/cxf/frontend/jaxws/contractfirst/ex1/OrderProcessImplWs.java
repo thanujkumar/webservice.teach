@@ -7,9 +7,13 @@ import demo.order.Order;
 import demo.order.OrderProcess;
 
 //In this wsdl is created and code generated - check resources/wsdl/OrderProcess.wsdl
+//all configuration exists in webapp/WEB-INF/cxfbeans.xml
 //run mvn jetty:run from cxf folder
-public class OrderProcessImplWs implements OrderProcess {
+//Package name of generated code with be as per wsdl:definition targetNamespace
+//A Java interface mapped from a wsdl:portType is called a Service Endpoint Interface or SEI for short (In our case OrderProcess is the name given to wsdl:portType, so the interface name is generated).
+public class OrderProcessImplWs implements OrderProcess/**interface name Maps  wsdl:portType Name**/ {
 
+	//below method name maps to wsdl:operation inside wsdl:binding
 	@Override
 	public String processOrder(Order order) {
 		String custId = order.getCustomerID();

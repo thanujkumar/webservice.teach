@@ -29,7 +29,7 @@ public class InvalidOrderException extends Exception {
 		this.faultInfo = falutBean;
 	}
 	
-	//Method required to provide custom fault <detail> element info
+	//Method required to provide custom fault <detail> element info as per jaxws specification
 	public MyFaultBean getFaultInfo() {
 		return faultInfo;
 	}
