@@ -197,7 +197,7 @@
 		<dependency>
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-xjc</artifactId>
-			<version>2.3.2</version>
+			<version>3.0.2</version>
 		</dependency>
 		<!-- required for in-vm  as jakarta.activation is missing com/sun/activation/registries/LogSupport class, reason in javax.activation.MailcapCommandMap is tied to LogSupport -->
 		<!-- https://issues.apache.org/jira/browse/CXF-7899 -->
