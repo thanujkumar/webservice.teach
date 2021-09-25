@@ -24,20 +24,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
-			<scope>compile</scope> <!-- TODO, when packaged not required, now needed for standalone applications -->
-		</dependency>
-
-		<!-- Apache CXF -->
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-core</artifactId>
-			<exclusions>
-				<exclusion>
-					<!-- using javax.activation as there is dependency for com.sun... -->
-					<artifactId>jakarta.activation-api</artifactId>
-					<groupId>jakarta.activation</groupId>
-				</exclusion>
-			</exclusions>
+			<scope>provided</scope> <!-- TODO, when packaged not required, now needed for standalone applications -->
 		</dependency>
 
 		<dependency>
@@ -198,6 +185,16 @@
 			<groupId>com.sun.xml.bind</groupId>
 			<artifactId>jaxb-xjc</artifactId>
 			<version>3.0.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.activation</groupId>
+					<artifactId>jakarta.activation</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.xml.bind</groupId>
+					<artifactId>jaxb-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!-- required for in-vm  as jakarta.activation is missing com/sun/activation/registries/LogSupport class, reason in javax.activation.MailcapCommandMap is tied to LogSupport -->
 		<!-- https://issues.apache.org/jira/browse/CXF-7899 -->

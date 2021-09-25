@@ -4,8 +4,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import demo.order.Order;
 import demo.order.OrderProcess;
-import demo.order.OrderProcessService;
 
+//Need to run maven jetty
 public class Client4Spring {
 
 	public static void main(String[] args) {

@@ -14,6 +14,8 @@ import org.apache.cxf.service.model.BindingOperationInfo;
 import org.apache.cxf.service.model.MessagePartInfo;
 import org.apache.cxf.service.model.ServiceInfo;
 
+//https://stackoverflow.com/questions/13039670/apache-cxf-dynamic-client-creation
+
 public class Client6DynamicUsingServiceModel {
 
 	public static void main(String[] args) throws Exception {

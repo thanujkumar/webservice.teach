@@ -12,7 +12,7 @@ import javax.xml.ws.handler.Handler;
 import java.util.List;
 
 public class Client7WithoutWSDL {
-    private static String pingUrl = "http://localhost:9999/cxfws/ex1/OrderProcess3";
+    private static String orderUrl = "http://localhost:9999/cxfws/ex1/OrderProcess3";
 
     public static void main(String[] args) {
         QName qName = new QName("http://order.demo", "processOrder");
@@ -20,7 +20,7 @@ public class Client7WithoutWSDL {
         OrderProcess orderProcess = processOrderService.getOrderProcessPort();
         BindingProvider bindingProvider = (BindingProvider) orderProcess;
         Binding binding = bindingProvider.getBinding();
-        bindingProvider.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, pingUrl);
+        bindingProvider.getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, orderUrl);
 
         //Log Message
         List<Handler> handlerChain = binding.getHandlerChain();

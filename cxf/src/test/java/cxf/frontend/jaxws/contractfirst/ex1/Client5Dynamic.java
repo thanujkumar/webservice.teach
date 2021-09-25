@@ -7,6 +7,7 @@ import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 
 import demo.order.Order;
 
+//// Run maven jetty to execute client
 public class Client5Dynamic {
 
 	

@@ -6,7 +6,7 @@ import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import demo.order.Order;
 import demo.order.OrderProcess;
 
-
+// Run maven jetty to execute client
 public class Client {
  
 	//Run cxf.frontend.jaxws.codefirst.ex2.jaxwsfactory.UsingJaxWSServerFactory (http://localhost:9999/orderProcess)

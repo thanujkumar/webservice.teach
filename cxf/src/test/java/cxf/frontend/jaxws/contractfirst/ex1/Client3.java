@@ -7,6 +7,7 @@ import demo.order.OrderProcess;
 import demo.order.OrderProcessService;
 
 //Based on generated client code from WSDL
+//// Run maven jetty to execute client
 public class Client3 {
 
 	private static final String WSDL_LOCATION = "http://localhost:9999/cxfws/ex1/OrderProcess3?wsdl";

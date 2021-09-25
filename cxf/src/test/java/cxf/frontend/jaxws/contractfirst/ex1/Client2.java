@@ -9,7 +9,7 @@ import demo.order.Order;
 import demo.order.OrderProcess;
 
 
-
+// Run maven jetty to execute client
 public class Client2 {
 	
 	private static final QName SERVICE_NAME = new QName("http://order.demo", "OrderProcessService");//matches wsdl service name
