@@ -8,6 +8,7 @@ import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 import cxf.frontend.jaxws.codefirst.ex1.OrderProcess;
 import cxf.frontend.jaxws.codefirst.ex1.OrderProcessImpl;
 
+//Related to codefirst.ex1
 public class UsingJaxWSServerFactory {
 
 	public static void main(String[] args) {

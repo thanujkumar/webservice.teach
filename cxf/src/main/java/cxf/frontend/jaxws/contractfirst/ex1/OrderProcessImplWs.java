@@ -11,6 +11,7 @@ import demo.order.OrderProcess;
 //run mvn jetty:run from cxf folder
 //Package name of generated code with be as per wsdl:definition targetNamespace
 //A Java interface mapped from a wsdl:portType is called a Service Endpoint Interface or SEI for short (In our case OrderProcess is the name given to wsdl:portType, so the interface name is generated).
+//TO LIST all services http://localhost:9999/cxfws/ex1
 public class OrderProcessImplWs implements OrderProcess/**interface name Maps  wsdl:portType Name**/ {
 
 	//below method name maps to wsdl:operation inside wsdl:binding
