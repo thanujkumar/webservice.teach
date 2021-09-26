@@ -24,7 +24,12 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>4.0.1</version>
-			<scope>provided</scope> <!-- TODO, when packaged not required, now needed for standalone applications -->
+			<scope>compile</scope> <!-- TODO, when packaged not required, now needed for standalone applications -->
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-simple</artifactId>
 		</dependency>
 
 		<dependency>

@@ -1,473 +1,513 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>webservice.teach</groupId>
-	<artifactId>webservice.teach.parent</artifactId>
-	<packaging>pom</packaging>
-	<version>1.0</version>
-	<name>webservice teach parent</name>
+    <groupId>webservice.teach</groupId>
+    <artifactId>webservice.teach.parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <name>webservice teach parent</name>
 
-	<properties>
-		<!-- Compiler properties for maven -->
-		<maven.compiler.target>11</maven.compiler.target>
-		<maven.compiler.source>11</maven.compiler.source>
-		<encoding>UTF-8</encoding>
-		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
-		<project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
-
-
-		<spring.version>5.3.10</spring.version>
-		<junit.version>5.8.1</junit.version>
-		<springws.version>3.0.6.RELEASE</springws.version>
-		<wsdl4j.version>1.6.3</wsdl4j.version>
-		<!-- http://ws.apache.org/xmlschema/ -->
-		<xmlschema.version>2.2.4</xmlschema.version>
-		<lombok.version>1.18.20</lombok.version>
-		<sl4j.version>1.7.26</sl4j.version>
-		<logback.version>1.2.3</logback.version>
-
-		<cxf.version>3.4.4</cxf.version>
-		<cxf.xjc.version>x.x.x</cxf.xjc.version>
-
-		<maven.jetty.plugin>9.4.43.v20210629</maven.jetty.plugin>
-
-		<jakarta.xml.ws.verion>2.3.2</jakarta.xml.ws.verion>
-		<!-- version 3.x uses jakarta.xml as package and not as javax -->
-		<jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
-		<jakarta.jws.version>1.1.1</jakarta.jws.version>
-		<jakarta.validation.version>2.0.2</jakarta.validation.version>
-		<jakarta.inject.version>1.0</jakarta.inject.version>
-		<jakarta.transaction.version>1.3.3</jakarta.transaction.version>
-		<jakarta.activation.api>1.2.2</jakarta.activation.api>
-
-	</properties>
-
-	<modules>
-		<module>cxf</module>
-		<module>springws</module>
-		<module>jaxws</module>
-	</modules>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-	</dependencies>
-
-	<!-- dependency management for child projects -->
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-beans</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-aop</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context-support</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.ws.xmlschema</groupId>
-				<artifactId>xmlschema-core</artifactId>
-				<version>${xmlschema.version}</version>
-			</dependency>
-
-			<!-- CXF -->
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-frontend-jaxws</artifactId>
-				<version>${cxf.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>javax.xml.ws</groupId>
-						<artifactId>jaxws-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>geronimo-jta_1.1_spec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.sun.activation</groupId>
-						<artifactId>javax.activation</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.annotation</groupId>
-						<artifactId>javax.annotation-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.activation</groupId>
-						<artifactId>activation</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>jakarta.activation</groupId>
-						<artifactId>jakarta.activation-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.xml.soap</groupId>
-						<artifactId>javax.xml.soap-api</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-frontend-jaxrs</artifactId>
-				<version>${cxf.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-transports-http</artifactId>
-				<version>${cxf.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>javax.xml.ws</groupId>
-						<artifactId>jaxws-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.sun.activation</groupId>
-						<artifactId>javax.activation</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>geronimo-jta_1.1_spec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.annotation</groupId>
-						<artifactId>javax.annotation-api</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<dependency>
-			    <groupId>org.apache.cxf</groupId>
-			    <artifactId>cxf-rt-transports-local</artifactId>
-				<version>${cxf.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>javax.annotation-api</artifactId>
-						<groupId>javax.annotation</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-						<groupId>org.apache.geronimo.specs</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>jaxws-api</artifactId>
-						<groupId>javax.xml.ws</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.activation</artifactId>
-						<groupId>com.sun.activation</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-transports-http-jetty</artifactId>
-				<version>${cxf.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>javax.servlet-api</artifactId>
-						<groupId>javax.servlet</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>jaxws-api</artifactId>
-						<groupId>javax.xml.ws</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.annotation-api</artifactId>
-						<groupId>javax.annotation</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-						<groupId>org.apache.geronimo.specs</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.activation</artifactId>
-						<groupId>com.sun.activation</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-databinding-aegis</artifactId>
-				<version>${cxf.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>javax.xml.ws</groupId>
-						<artifactId>jaxws-api</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>com.sun.activation</groupId>
-						<artifactId>javax.activation</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.geronimo.specs</groupId>
-						<artifactId>geronimo-jta_1.1_spec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>javax.annotation</groupId>
-						<artifactId>javax.annotation-api</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-ws-security</artifactId>
-				<version>${cxf.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>jaxws-api</artifactId>
-						<groupId>javax.xml.ws</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>woodstox-core-asl</artifactId>
-						<groupId>org.codehaus.woodstox</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-						<groupId>org.apache.geronimo.specs</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.annotation-api</artifactId>
-						<groupId>javax.annotation</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.activation</artifactId>
-						<groupId>com.sun.activation</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>geronimo-javamail_1.4_mail</artifactId>
-						<groupId>org.apache.geronimo.javamail</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-rs-client</artifactId>
-				<version>${cxf.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-rt-features-logging</artifactId>
-				<version>${cxf.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
-						<groupId>org.apache.geronimo.specs</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.xml.soap-api</artifactId>
-						<groupId>javax.xml.soap</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.annotation-api</artifactId>
-						<groupId>javax.annotation</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>jaxws-api</artifactId>
-						<groupId>javax.xml.ws</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>javax.activation</artifactId>
-						<groupId>com.sun.activation</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
+    <properties>
+        <!-- Compiler properties for maven -->
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <encoding>UTF-8</encoding>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
+        <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
 
 
-			<!-- Springframework webservices library -->
-			<dependency>
-				<groupId>org.springframework.ws</groupId>
-				<artifactId>spring-xml</artifactId>
-				<version>${springws.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.ws</groupId>
-				<artifactId>spring-ws-core</artifactId>
-				<version>${springws.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.ws</groupId>
-				<artifactId>spring-ws-support</artifactId>
-				<version>${springws.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>activation</artifactId>
-						<groupId>javax.activation</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.ws</groupId>
-				<artifactId>spring-ws-security</artifactId>
-				<version>${springws.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.ws</groupId>
-				<artifactId>spring-ws-test</artifactId>
-				<version>${springws.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>wsdl4j</groupId>
-				<artifactId>wsdl4j</artifactId>
-				<version>${wsdl4j.version}</version>
-			</dependency>
+        <spring.version>5.3.10</spring.version>
+        <junit.version>5.8.1</junit.version>
+        <springws.version>3.0.6.RELEASE</springws.version>
+        <wsdl4j.version>1.6.3</wsdl4j.version>
+        <!-- http://ws.apache.org/xmlschema/ -->
+        <xmlschema.version>2.2.4</xmlschema.version>
+        <lombok.version>1.18.20</lombok.version>
+        <sl4j.version>1.7.26</sl4j.version>
+        <logback.version>1.2.3</logback.version>
 
-			<!-- Spring web framework, in case springws dependencies are loaded -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${springws.version}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>aopalliance</artifactId>
-						<groupId>aopalliance</groupId>
-					</exclusion>
-					<exclusion>
-						<artifactId>spring-jcl</artifactId>
-						<groupId>org.springframework</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
+        <cxf.version>3.4.4</cxf.version>
+        <cxf.xjc.version>x.x.x</cxf.xjc.version>
+
+        <maven.jetty.plugin>9.4.43.v20210629</maven.jetty.plugin>
+
+        <jakarta.xml.ws.verion>2.3.2</jakarta.xml.ws.verion>
+        <!-- version 3.x uses jakarta.xml as package and not as javax -->
+        <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
+        <jakarta.jws.version>1.1.1</jakarta.jws.version>
+        <jakarta.validation.version>2.0.2</jakarta.validation.version>
+        <jakarta.inject.version>1.0</jakarta.inject.version>
+        <jakarta.transaction.version>1.3.3</jakarta.transaction.version>
+        <jakarta.activation.api>1.2.2</jakarta.activation.api>
+
+    </properties>
+
+    <modules>
+        <module>cxf</module>
+        <module>springws</module>
+        <module>jaxws</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- dependency management for child projects -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.ws.xmlschema</groupId>
+                <artifactId>xmlschema-core</artifactId>
+                <version>${xmlschema.version}</version>
+            </dependency>
+
+            <!-- CXF -->
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-simple</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.xml.ws</groupId>
+                        <artifactId>jaxws-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.annotation</groupId>
+                        <artifactId>javax.annotation-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>jakarta.activation</groupId>
+                        <artifactId>jakarta.activation-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.xml.soap</groupId>
+                        <artifactId>javax.xml.soap-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency >
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxws</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.xml.ws</groupId>
+                        <artifactId>jaxws-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.annotation</groupId>
+                        <artifactId>javax.annotation-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>jakarta.activation</groupId>
+                        <artifactId>jakarta.activation-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.xml.soap</groupId>
+                        <artifactId>javax.xml.soap-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.xml.ws</groupId>
+                        <artifactId>jaxws-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.annotation</groupId>
+                        <artifactId>javax.annotation-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-local</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>javax.annotation-api</artifactId>
+                        <groupId>javax.annotation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jaxws-api</artifactId>
+                        <groupId>javax.xml.ws</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-transports-http-jetty</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>javax.servlet-api</artifactId>
+                        <groupId>javax.servlet</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jaxws-api</artifactId>
+                        <groupId>javax.xml.ws</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.annotation-api</artifactId>
+                        <groupId>javax.annotation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-databinding-aegis</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.xml.ws</groupId>
+                        <artifactId>jaxws-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.sun.activation</groupId>
+                        <artifactId>javax.activation</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                        <artifactId>geronimo-jta_1.1_spec</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.annotation</groupId>
+                        <artifactId>javax.annotation-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-ws-security</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>jaxws-api</artifactId>
+                        <groupId>javax.xml.ws</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>woodstox-core-asl</artifactId>
+                        <groupId>org.codehaus.woodstox</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.annotation-api</artifactId>
+                        <groupId>javax.annotation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>geronimo-javamail_1.4_mail</artifactId>
+                        <groupId>org.apache.geronimo.javamail</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-client</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-features-logging</artifactId>
+                <version>${cxf.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+                        <groupId>org.apache.geronimo.specs</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.xml.soap-api</artifactId>
+                        <groupId>javax.xml.soap</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.annotation-api</artifactId>
+                        <groupId>javax.annotation</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>jaxws-api</artifactId>
+                        <groupId>javax.xml.ws</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>javax.activation</artifactId>
+                        <groupId>com.sun.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
 
-			<!-- moving to jakarta.ee for JEE API's -->
-			<!-- https://wiki.eclipse.org/New_Maven_Coordinates , https://jakarta.ee/ -->
-			<!-- javax xml bind jee 6/7/8 maven library from jakarta -->
-			<dependency>
-				<groupId>jakarta.xml.bind</groupId>
-				<artifactId>jakarta.xml.bind-api</artifactId>
-				<version>${jakarta.xml.bind.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>jakarta.xml.ws</groupId>
-				<artifactId>jakarta.xml.ws-api</artifactId>
-				<version>${jakarta.xml.ws.verion}</version>
-			</dependency>
-			<dependency>
-				<groupId>jakarta.jws</groupId>
-				<artifactId>jakarta.jws-api</artifactId>
-				<version>${jakarta.jws.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>jakarta.validation</groupId>
-				<artifactId>jakarta.validation-api</artifactId>
-				<version>${jakarta.validation.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>jakarta.inject</groupId>
-				<artifactId>jakarta.inject-api</artifactId>
-				<version>${jakarta.inject.version}</version>
-			</dependency>
+            <!-- Springframework webservices library -->
+            <dependency>
+                <groupId>org.springframework.ws</groupId>
+                <artifactId>spring-xml</artifactId>
+                <version>${springws.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ws</groupId>
+                <artifactId>spring-ws-core</artifactId>
+                <version>${springws.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ws</groupId>
+                <artifactId>spring-ws-support</artifactId>
+                <version>${springws.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>activation</artifactId>
+                        <groupId>javax.activation</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ws</groupId>
+                <artifactId>spring-ws-security</artifactId>
+                <version>${springws.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.ws</groupId>
+                <artifactId>spring-ws-test</artifactId>
+                <version>${springws.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>wsdl4j</groupId>
+                <artifactId>wsdl4j</artifactId>
+                <version>${wsdl4j.version}</version>
+            </dependency>
+
+            <!-- Spring web framework, in case springws dependencies are loaded -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${springws.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>aopalliance</artifactId>
+                        <groupId>aopalliance</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <artifactId>spring-jcl</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
 
-			<!-- Lombok -->
-			<dependency>
-				<groupId>org.projectlombok</groupId>
-				<artifactId>lombok</artifactId>
-				<version>${lombok.version}</version>
-			</dependency>
+            <!-- moving to jakarta.ee for JEE API's -->
+            <!-- https://wiki.eclipse.org/New_Maven_Coordinates , https://jakarta.ee/ -->
+            <!-- javax xml bind jee 6/7/8 maven library from jakarta -->
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>${jakarta.xml.bind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.xml.ws</groupId>
+                <artifactId>jakarta.xml.ws-api</artifactId>
+                <version>${jakarta.xml.ws.verion}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.jws</groupId>
+                <artifactId>jakarta.jws-api</artifactId>
+                <version>${jakarta.jws.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.inject</groupId>
+                <artifactId>jakarta.inject-api</artifactId>
+                <version>${jakarta.inject.version}</version>
+            </dependency>
 
-			<!-- SL4J API -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${sl4j.version}</version>
-			</dependency>
 
-			<!-- Logback API -->
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-				<version>${logback.version}</version>
-			</dependency>
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
 
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-core</artifactId>
-				<version>${logback.version}</version>
-			</dependency>
+            <!-- SL4J API -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${sl4j.version}</version>
+            </dependency>
 
-		</dependencies>
-	</dependencyManagement>
+            <!-- Logback API -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<release>11</release>
-					<forceJavacCompilerUse>true</forceJavacCompilerUse>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.14.1</version>
-			</plugin>
-			<!-- plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-enforcer-plugin</artifactId> <version>1.2</version> <executions> <execution> <id>enforce</id> <configuration> 
-				<rules> <DependencyConvergence /> </rules> </configuration> <goals> <goal>enforce</goal> </goals> </execution> </executions> </plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.0.1</version>
-			</plugin>
-		</plugins>
-	</build>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>11</release>
+                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.14.1</version>
+            </plugin>
+            <!-- plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-enforcer-plugin</artifactId> <version>1.2</version> <executions> <execution> <id>enforce</id> <configuration>
+                <rules> <DependencyConvergence /> </rules> </configuration> <goals> <goal>enforce</goal> </goals> </execution> </executions> </plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.1</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

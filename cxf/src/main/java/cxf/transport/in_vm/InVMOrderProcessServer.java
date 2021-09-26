@@ -69,8 +69,9 @@ public class InVMOrderProcessServer {
 		
 		Bus serverBus = BusFactory.getDefaultBus();
 		for (Feature f : serverBus.getFeatures()) {
-			 System.out.println(f);
+			 System.out.println("Feature -> "+f);
 		}
+		System.out.println("================Bus Properties===============");
 		Map<String, Object> props = serverBus.getProperties();
 		for(String s : props.keySet()) {
 			System.out.println(s +" -> "+ props.get(s));

@@ -7,7 +7,7 @@ import javax.xml.ws.Endpoint;
 
 public class HelloWorldJaxWsServer {
 
-    static  final  String endpoint = "http://localhost:9090/HelloServerPort";
+    static  final  String endpoint = "http://localhost:5000/HelloServerPort"; //soap address
 
     public static void main(String[] args) {
         HelloWorldJaxWs implemtation = new HelloWorldJaxWsImpl();
