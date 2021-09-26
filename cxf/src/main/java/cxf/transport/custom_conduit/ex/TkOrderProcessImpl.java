@@ -1,9 +1,6 @@
 package cxf.transport.custom_conduit.ex;
 
 import cxf.transport.in_vm.InvalidOrderException;
-import cxf.transport.in_vm.MyFaultBean;
-import cxf.transport.in_vm.Order;
-import cxf.transport.in_vm.OrderProcess;
 
 import java.util.UUID;
 
