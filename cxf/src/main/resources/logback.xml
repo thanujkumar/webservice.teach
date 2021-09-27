@@ -23,7 +23,17 @@
 		</encoder>
 	</appender>
 
+	<!-- https://codenotfound.com/apache-cxf-logging-soap-request-response-fault-messages-example.html -->
+	<!-- https://blog.codecentric.de/en/2016/07/spring-boot-apache-cxf-logging-monitoring-logback-elasticsearch-logstash-kibana/ -->
+	<!-- check org.apache.cxf.ext.logging.slf4j.Slf4jEventSender -->
+
 	<appender name="WSPAYLOAD" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+			<evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
+				<marker>SOAP</marker>
+			</evaluator>
+			<onMismatch>DENY</onMismatch>
+		</filter>
 		<file>${logback.logdir}/wspayload.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<fileNamePattern>${logback.logdir}/wspayload.log.${logback.rollingPattern}</fileNamePattern>
@@ -34,10 +44,29 @@
 		</encoder>
 	</appender>
 
-	<!--WSPAYLOAD to logg in and out messages -->
+	<appender name="RESTPAYLOAD" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+			<evaluator class="ch.qos.logback.classic.boolex.OnMarkerEvaluator">
+				<marker>REST</marker>
+			</evaluator>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>${logback.logdir}/restpayload.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${logback.logdir}/restpayload.log.${logback.rollingPattern}</fileNamePattern>
+			<maxHistory>400</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${logback.classic.pattern}</pattern>
+		</encoder>
+	</appender>
+
+	<!--RESTPAYLOAD and WSPAYLOAD to log in and out messages -->
 	<logger name="org.apache.cxf.services" additivity="false">
 		<appender-ref ref="WSPAYLOAD" />
+		<appender-ref ref="RESTPAYLOAD" />
 	</logger>
+
 
 	<root level="INFO">
 		<appender-ref ref="LOGFILE" />

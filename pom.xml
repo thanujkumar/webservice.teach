@@ -42,6 +42,8 @@
         <jakarta.inject.version>1.0</jakarta.inject.version>
         <jakarta.transaction.version>1.3.3</jakarta.transaction.version>
         <jakarta.activation.api>1.2.2</jakarta.activation.api>
+        <!-- Functionality to handle JSON input/output for JAX-RS implementations (like Jersey and RESTeasy) using standard Jackson data binding. -->
+        <jackson-jaxrs-json-provider.version>2.12.5</jackson-jaxrs-json-provider.version>
 
     </properties>
 
@@ -192,6 +194,22 @@
                 <artifactId>cxf-rt-frontend-jaxrs</artifactId>
                 <version>${cxf.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-client</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-rs-extension-providers</artifactId>
+                <version>${cxf.version}</version>
+            </dependency>
+            <!-- Functionality to handle JSON input/output for JAX-RS implementations (like Jersey and RESTeasy) using standard Jackson data binding -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.jaxrs</groupId>
+                <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <version>${jackson-jaxrs-json-provider.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.apache.cxf</groupId>
@@ -331,12 +349,6 @@
                         <groupId>org.apache.geronimo.javamail</groupId>
                     </exclusion>
                 </exclusions>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-rt-rs-client</artifactId>
-                <version>${cxf.version}</version>
             </dependency>
 
             <dependency>
