@@ -37,7 +37,7 @@
         <jakarta.xml.ws.verion>2.3.2</jakarta.xml.ws.verion>
         <!-- version 3.x uses jakarta.xml as package and not as javax -->
         <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
-        <jakarta.jws.version>1.1.1</jakarta.jws.version>
+        <jakarta.jws.version>2.1.0</jakarta.jws.version>
         <jakarta.validation.version>2.0.2</jakarta.validation.version>
         <jakarta.inject.version>1.0</jakarta.inject.version>
         <jakarta.transaction.version>1.3.3</jakarta.transaction.version>
