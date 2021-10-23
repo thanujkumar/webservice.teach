@@ -24,12 +24,12 @@
         <springws.version>3.0.6.RELEASE</springws.version>
         <wsdl4j.version>1.6.3</wsdl4j.version>
         <!-- http://ws.apache.org/xmlschema/ -->
-        <xmlschema.version>2.2.4</xmlschema.version>
+        <xmlschema.version>2.3.0</xmlschema.version>
         <lombok.version>1.18.22</lombok.version>
         <sl4j.version>1.7.32</sl4j.version>
         <logback.version>1.2.6</logback.version>
 
-        <cxf.version>3.4.4</cxf.version>
+        <cxf.version>3.4.5</cxf.version>
         <cxf.xjc.version>x.x.x</cxf.xjc.version>
 
         <maven.jetty.plugin>9.4.43.v20210629</maven.jetty.plugin>
@@ -43,7 +43,7 @@
         <jakarta.transaction.version>1.3.3</jakarta.transaction.version>
         <jakarta.activation.api>1.2.2</jakarta.activation.api>
         <!-- Functionality to handle JSON input/output for JAX-RS implementations (like Jersey and RESTeasy) using standard Jackson data binding. -->
-        <jackson-jaxrs-json-provider.version>2.12.5</jackson-jaxrs-json-provider.version>
+        <jackson-jaxrs-json-provider.version>2.13.0</jackson-jaxrs-json-provider.version>
 
     </properties>
 
