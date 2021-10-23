@@ -15,7 +15,7 @@
 	<packaging>war</packaging>
 
 	<properties>
-       <cxf.version>3.4.4</cxf.version>
+       <cxf.version>3.4.5</cxf.version>
 	</properties>
 
 	<dependencies>
