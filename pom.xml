@@ -25,14 +25,14 @@
         <wsdl4j.version>1.6.3</wsdl4j.version>
         <!-- http://ws.apache.org/xmlschema/ -->
         <xmlschema.version>2.2.4</xmlschema.version>
-        <lombok.version>1.18.20</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <sl4j.version>1.7.32</sl4j.version>
         <logback.version>1.2.6</logback.version>
 
         <cxf.version>3.4.4</cxf.version>
         <cxf.xjc.version>x.x.x</cxf.xjc.version>
 
-        <maven.jetty.plugin>9.4.43.v20210629</maven.jetty.plugin>
+        <maven.jetty.plugin>11.0.7</maven.jetty.plugin>
 
         <jakarta.xml.ws.verion>2.3.2</jakarta.xml.ws.verion>
         <!-- version 3.x uses jakarta.xml as package and not as javax -->
@@ -518,7 +518,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.2.0</version>
             </plugin>
         </plugins>
     </build>
