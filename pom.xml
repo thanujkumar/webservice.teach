@@ -32,7 +32,7 @@
         <cxf.version>3.4.5</cxf.version>
         <cxf.xjc.version>x.x.x</cxf.xjc.version>
 
-        <maven.jetty.plugin>9.4.43.v20210629</maven.jetty.plugin>
+        <maven.jetty.plugin>11.0.7</maven.jetty.plugin>
 
         <jakarta.xml.ws.verion>2.3.2</jakarta.xml.ws.verion>
         <!-- version 3.x uses jakarta.xml as package and not as javax -->
