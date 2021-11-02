@@ -1,0 +1,14 @@
+Invoker, in web service context, simply means to
+invoke a method of the service, and the Invoker component does exactly the same.
+So what is special about the Invoker component? Well, it provides you with the
+ability to customize your service method execution. It provides you with the ability
+to control the service invocation. It effectively means you can prefix or add more
+functionality to your service business method before the method is actually invoked.
+Invokers are applied to a service endpoint.
+
+Invoker acts more like simple filter components. It gives you the ability to intercept
+the message before the service method is called or invoked. Invokers though cannot
+be called as interceptors. In CXF, interceptors process messages at different phases
+in an inbound or outbound chain. Invokers do not have phases, they merely invoke
+a service method with the ability to intercept the message just before the service
+method is invoked.

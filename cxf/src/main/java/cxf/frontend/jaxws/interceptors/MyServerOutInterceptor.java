@@ -6,6 +6,8 @@ import org.apache.cxf.interceptor.Fault;
 import org.apache.cxf.phase.Phase;
 import org.apache.cxf.phase.PhaseInterceptorChain;
 
+//Check  org.apache.cxf.phase.PhaseManager implementation to know the phases
+
 public class MyServerOutInterceptor extends AbstractSoapInterceptor {
 
     public MyServerOutInterceptor() {
@@ -17,6 +19,7 @@ public class MyServerOutInterceptor extends AbstractSoapInterceptor {
     public void handleMessage(SoapMessage soapMessage) throws Fault {
         System.out.println("OUT-S Current Phase ==> " + getPhase());
         System.out.println("OutMessage : "+ PhaseInterceptorChain.getCurrentMessage().getExchange().getOutMessage());
+        System.out.println("Interceptor ID : "+ getId());
         System.out.println("OUT-S Before ==> " + getBefore());
         System.out.println("OUT-S After  ==> " + getAfter());
         System.out.println("OUT-S SoapMessage ==>" + soapMessage);

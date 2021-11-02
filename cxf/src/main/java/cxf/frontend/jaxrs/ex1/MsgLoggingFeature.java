@@ -9,6 +9,7 @@ import org.apache.cxf.message.Message;
 import org.apache.cxf.phase.AbstractPhaseInterceptor;
 import org.apache.cxf.phase.Phase;
 import org.apache.cxf.phase.PhaseInterceptorChain;
+import org.apache.cxf.service.model.BindingInfo;
 import org.apache.cxf.service.model.EndpointInfo;
 import org.apache.cxf.service.model.ServiceInfo;
 
@@ -23,6 +24,7 @@ public class MsgLoggingFeature extends AbstractFeature {
             public void handleMessage(Message message) throws Fault {
                 Endpoint ep = message.getExchange().getEndpoint();
                 EndpointInfo endpointInfo = (ep == null) ? new EndpointInfo() : ep.getEndpointInfo();
+                BindingInfo bindingInfo = ep.getBinding().getBindingInfo(); //check bindingid ends in jaxrs or check Slf4jEventSender
                 ServiceInfo serviceInfo = endpointInfo.getService();
                 QName name = null;
                 if (serviceInfo != null) {

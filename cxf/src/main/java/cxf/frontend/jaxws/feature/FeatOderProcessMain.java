@@ -7,6 +7,7 @@ import org.apache.cxf.ext.logging.LoggingFeature;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 import org.apache.cxf.transport.common.gzip.GZIPFeature;
 
+//Check  org.apache.cxf.phase.PhaseManager implementation to know the phases
 
 public class FeatOderProcessMain {
 

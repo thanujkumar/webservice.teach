@@ -26,6 +26,8 @@ import org.apache.cxf.phase.Phase;
  PRE_PROTOCOL            ===> Misc protocol actions
  */
 
+//Check  org.apache.cxf.phase.PhaseManager implementation to know the phases
+
 //Just sample TODO not used
 public class MyPhaseInterceptor extends AbstractPhaseInterceptor  /* PhaseInterceptor implements Interceptor*/{
 
