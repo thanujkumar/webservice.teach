@@ -34,7 +34,7 @@
 
         <maven.jetty.plugin>11.0.7</maven.jetty.plugin>
 
-        <jakarta.xml.ws.verion>2.3.2</jakarta.xml.ws.verion>
+        <jakarta.xml.ws.verion>2.3.3</jakarta.xml.ws.verion>
         <!-- version 3.x uses jakarta.xml as package and not as javax -->
         <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
         <jakarta.jws.version>2.1.0</jakarta.jws.version>
