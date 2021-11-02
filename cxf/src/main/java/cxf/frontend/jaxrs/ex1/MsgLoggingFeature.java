@@ -28,6 +28,7 @@ public class MsgLoggingFeature extends AbstractFeature {
                 if (serviceInfo != null) {
                     name = serviceInfo.getName();
                 }
+                System.out.println("Is REST : " + message.get(Message.REST_MESSAGE));
                 System.out.println("WS Request type : " + (name != null ? "SOAP" : "REST"));
                 System.out.println("URI : " + message.get(Message.REQUEST_URI));
                 System.out.println("MSG => " + PhaseInterceptorChain.getCurrentMessage());
