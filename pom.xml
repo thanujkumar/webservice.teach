@@ -27,7 +27,7 @@
         <xmlschema.version>2.3.0</xmlschema.version>
         <lombok.version>1.18.22</lombok.version>
         <sl4j.version>1.7.36</sl4j.version>
-        <logback.version>1.2.9</logback.version>
+        <logback.version>1.2.10</logback.version>
 
         <cxf.version>3.5.0</cxf.version>
         <cxf.xjc.version>x.x.x</cxf.xjc.version>
