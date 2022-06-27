@@ -22,7 +22,7 @@ jobs:
           distribution: 'adopt'
           overwrite-settings: false
       - name: setup maven
-        uses: stCarolas/setup-maven@v4.3
+        uses: stCarolas/setup-maven@v4.4
         with:
           maven-version: 3.8.1
       - name: compile and test
