@@ -21,7 +21,7 @@
 
         <spring.version>5.3.19</spring.version>
         <junit.version>5.8.2</junit.version>
-        <springws.version>3.0.6.RELEASE</springws.version>
+        <springws.version>6.0.0</springws.version>
         <wsdl4j.version>1.6.3</wsdl4j.version>
         <!-- http://ws.apache.org/xmlschema/ -->
         <xmlschema.version>2.3.0</xmlschema.version>
