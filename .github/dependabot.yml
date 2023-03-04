@@ -5,6 +5,9 @@ updates:
     schedule:
       interval: weekly
     ignore:
+      - dependency-name: org.springframework:*
+        versions:
+          - "> 6.x.x"
       - dependency-name: org.hibernate.validator:hibernate-validator
         versions:
           - "> 7.x.x.Final"
