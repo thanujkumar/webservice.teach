@@ -19,7 +19,7 @@
         <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
 
 
-        <spring.version>5.3.25</spring.version>
+        <spring.version>5.3.27</spring.version>
         <junit.version>5.9.2</junit.version>
         <springws.version>3.0.6.RELEASE</springws.version>
         <wsdl4j.version>1.6.3</wsdl4j.version>
@@ -27,7 +27,7 @@
         <xmlschema.version>2.3.0</xmlschema.version>
         <lombok.version>1.18.26</lombok.version>
         <sl4j.version>2.0.7</sl4j.version>
-        <logback.version>1.4.5</logback.version>
+        <logback.version>1.4.6</logback.version>
 
         <cxf.version>4.0.0</cxf.version>
         <cxf.xjc.version>x.x.x</cxf.xjc.version>
@@ -511,7 +511,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>3.1.0</version>
             </plugin>
             <!-- plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-enforcer-plugin</artifactId> <version>1.2</version> <executions> <execution> <id>enforce</id> <configuration>
                 <rules> <DependencyConvergence /> </rules> </configuration> <goals> <goal>enforce</goal> </goals> </execution> </executions> </plugin -->
