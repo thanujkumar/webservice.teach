@@ -29,7 +29,7 @@
         <sl4j.version>2.0.7</sl4j.version>
         <logback.version>1.4.7</logback.version>
 
-        <cxf.version>4.0.1</cxf.version>
+        <cxf.version>4.0.2</cxf.version>
         <cxf.xjc.version>x.x.x</cxf.xjc.version>
 
         <maven.jetty.plugin>11.0.15</maven.jetty.plugin>
