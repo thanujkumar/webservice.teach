@@ -32,6 +32,9 @@ updates:
       - dependency-name: jakarta.xml.ws:jakarta.xml.ws-api
         versions:
           - "> 3.x.x"
+      - dependency-name: org.apache.cxf:cxf-codegen-plugin
+        versions:
+          - "> 4.x.x"          
 
   - package-ecosystem: github-actions
     directory: "/"
