@@ -14,10 +14,6 @@
 	<name>cxf</name>
 	<packaging>war</packaging>
 
-	<properties>
-       <cxf.version>3.6.2</cxf.version>
-	</properties>
-
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
@@ -75,6 +71,12 @@
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-ws-security</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.ehcache</groupId>
+					<artifactId>ehcache</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
