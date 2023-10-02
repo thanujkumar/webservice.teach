@@ -24,7 +24,7 @@
         <springws.version>3.0.6.RELEASE</springws.version>
         <wsdl4j.version>1.6.3</wsdl4j.version>
         <!-- http://ws.apache.org/xmlschema/ -->
-        <xmlschema.version>2.3.0</xmlschema.version>
+        <xmlschema.version>2.3.1</xmlschema.version>
         <lombok.version>1.18.28</lombok.version>
         <sl4j.version>2.0.7</sl4j.version>
         <logback.version>1.4.11</logback.version>
